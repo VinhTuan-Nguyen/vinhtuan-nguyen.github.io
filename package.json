@@ -1,5 +1,5 @@
 {
-  "homepage": "https://vinhtuan-nguyen.github.io/",
+  "homepage": "https://vinhtuan-nguyen.github.io/portfolio",
   "name": "professional-portfolio",
   "private": true,
   "version": "1.0.0",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
