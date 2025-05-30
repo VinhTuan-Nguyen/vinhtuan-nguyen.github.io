@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import type { Project } from '../utils/data';
+import { IFProject } from '../utils/interfaces/IFProject';
 
 interface ProjectCardProps {
-  project: Project;
+  project: IFProject;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {

@@ -1,16 +1,11 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { translations, Language } from '../utils/translations';
+import React, { useContext, useState, useEffect } from 'react';
+import { Language } from '../utils/Types';
+import { TRANSLATIONS } from '../utils/data/consts/Translations.const';
+import { LANGCONTEXT } from '../utils/data/consts/ContextTypes.const';
 
-interface LanguageContextType {
-  language: Language;
-  t: (key: string) => string;
-  changeLanguage: (lang: Language) => void;
-}
-
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const useLanguage = () => {
-  const context = useContext(LanguageContext);
+  const context = useContext(LANGCONTEXT);
   if (context === undefined) {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
@@ -41,17 +36,17 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   // Translation function
   const t = (key: string): string => {
-    const translation = translations[language]?.[key];
+    const translation = TRANSLATIONS[language]?.[key];
     if (!translation) {
       console.warn(`Translation missing for key: ${key} in language: ${language}`);
-      return translations.en[key] || key;
+      return TRANSLATIONS.en[key] || key;
     }
     return translation;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, t, changeLanguage }}>
+    <LANGCONTEXT.Provider value={{ language, t, changeLanguage }}>
       {children}
-    </LanguageContext.Provider>
+    </LANGCONTEXT.Provider>
   );
 };

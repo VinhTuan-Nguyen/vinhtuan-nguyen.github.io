@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { projects } from '../utils/data';
+import { PROJECTS } from '../utils/data/consts/Projects.const';
 
 const ProjectDetail: React.FC = () => {
   const { t } = useLanguage();
@@ -10,7 +10,7 @@ const ProjectDetail: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   // Find the project based on the ID
-  const project = projects.find(p => p.id === id);
+  const project = PROJECTS.find(p => p.id === id);
   
   // Scroll to top on page load
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { projects } from '../utils/data';
+import { PROJECTS } from '../utils/data/consts/Projects.const';
 import { useLanguage } from '../contexts/LanguageContext';
 import ProjectCard from '../components/ProjectCard';
 
@@ -10,8 +10,8 @@ const Projects: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<Category>('all');
   
   const filteredProjects = activeCategory === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
+    ? PROJECTS 
+    : PROJECTS.filter(p => p.category === activeCategory);
   
   const categories: { value: Category; label: string }[] = [
     { value: 'all', label: t('projects.filter.all') },

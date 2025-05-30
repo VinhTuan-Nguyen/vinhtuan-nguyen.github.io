@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 //import { useLanguage } from '../contexts/LanguageContext';
-import type { Certificate } from '../utils/data';
+import { IFCertificate } from '../utils/interfaces/IFCertificate';
 
 interface CertificateSliderProps {
-  certificates: Certificate[];
+  certificates: IFCertificate[];
 }
 
 const CertificateSlider: React.FC<CertificateSliderProps> = ({ certificates }) => {

@@ -1,22 +1,6 @@
-import { IFProject } from "./interfaces/IFProject";
+import { IFProject } from "../../interfaces/IFProject";
 
-
-export interface Certificate {
-  id: string;
-  title: string;
-  issuer: string;
-  date: string;
-  description: string;
-  image: string;
-  verificationUrl?: string;
-}
-
-export interface Skill {
-  category: string;
-  items: string[];
-}
-
-export const projects: IFProject[] = [
+export const PROJECTS: IFProject[] = [
   {
     id: 'ecommerce-platform',
     title: 'E-Commerce Platform',
@@ -74,63 +58,3 @@ export const projects: IFProject[] = [
     featured: false
   }
 ];
-
-export const certificates: Certificate[] = [
-  {
-    id: 'cert-1',
-    title: 'Full Stack Web Development',
-    issuer: 'Udemy',
-    date: 'December 2024',
-    description: 'Comprehensive course covering front-end and back-end development with modern frameworks and tools. Developed multiple real-world projects including an e-commerce platform and social media application.',
-    image: 'https://images.pexels.com/photos/5926382/pexels-photo-5926382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    verificationUrl: 'https://example.com/verify/cert1'
-  },
-  {
-    id: 'cert-2',
-    title: 'Advanced React and Redux',
-    issuer: 'Coursera',
-    date: 'August 2024',
-    description: 'Mastered advanced React concepts including hooks, context API, Redux, and performance optimization techniques. Implemented state management patterns for complex applications.',
-    image: 'https://images.pexels.com/photos/5926394/pexels-photo-5926394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    verificationUrl: 'https://example.com/verify/cert2'
-  },
-  {
-    id: 'cert-3',
-    title: 'UI/UX Design Principles',
-    issuer: 'LinkedIn Learning',
-    date: 'May 2024',
-    description: 'Learned user-centered design principles, wireframing, prototyping, and usability testing. Created comprehensive design systems and conducted user research for various projects.',
-    image: 'https://images.pexels.com/photos/5926397/pexels-photo-5926397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    verificationUrl: 'https://example.com/verify/cert3'
-  }
-];
-
-export const skills: Skill[] = [
-  {
-    category: 'Programming Languages',
-    items: ['JavaScript', 'TypeScript', 'Python', 'HTML5', 'CSS3/SASS']
-  },
-  {
-    category: 'Frameworks & Libraries',
-    items: ['React', 'Next.js', 'Node.js', 'Express', 'Tailwind CSS', 'Bootstrap']
-  },
-  {
-    category: 'Tools & Platforms',
-    items: ['Git', 'VS Code', 'Docker', 'AWS', 'Firebase', 'MongoDB', 'PostgreSQL']
-  },
-  {
-    category: 'Design & UX',
-    items: ['Figma', 'Adobe XD', 'Responsive Design', 'UI/UX Principles', 'Wireframing']
-  },
-  {
-    category: 'Soft Skills',
-    items: ['Problem Solving', 'Team Collaboration', 'Project Management', 'Communication', 'Adaptability']
-  }
-];
-
-export const socialLinks = {
-  github: 'https://github.com/yourusername',
-  linkedin: 'https://linkedin.com/in/yourusername',
-  twitter: 'https://twitter.com/yourusername',
-  email: 'your.email@example.com'
-};

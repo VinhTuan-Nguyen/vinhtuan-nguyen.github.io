@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { projects } from '../utils/data';
+import { PROJECTS } from '../utils/data/consts/Projects.const';
 import ProjectCard from '../components/ProjectCard';
 import ResumeButton from '../components/ResumeButton';
 
 const Home: React.FC = () => {
   const { t } = useLanguage();
-  const featuredProjects = projects.filter(project => project.featured);
+  const featuredProjects = PROJECTS.filter(p => p.featured);
   
   return (
     <div className="min-h-screen">

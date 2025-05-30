@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { certificates } from '../utils/data';
+import { CERTIFICATES } from '../utils/data/consts/Certificates.const';
 import CertificateSlider from '../components/CertificateSlider';
 
 const Certificates: React.FC = () => {
@@ -20,7 +20,7 @@ const Certificates: React.FC = () => {
         </div>
         
         {/* Certificate Slider */}
-        <CertificateSlider certificates={certificates} />
+        <CertificateSlider certificates={CERTIFICATES} />
       </div>
     </div>
   );

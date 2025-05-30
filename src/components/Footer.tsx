@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github as GitHub, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github as GitHub, Linkedin, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { socialLinks } from '../utils/data';
+import { SOCIAL_LINKS } from '../utils/data/consts/SocialLinks.const';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
         {/* Middle section with social links */}
         <div className="flex justify-center space-x-6 mb-8">
           <a 
-            href={socialLinks.github}
+            href={SOCIAL_LINKS.github}
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             <GitHub className="h-6 w-6" />
           </a>
           <a 
-            href={socialLinks.linkedin}
+            href={SOCIAL_LINKS.linkedin}
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
@@ -57,16 +57,7 @@ const Footer: React.FC = () => {
             <Linkedin className="h-6 w-6" />
           </a>
           <a 
-            href={socialLinks.twitter}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
-            aria-label="Twitter"
-          >
-            <Twitter className="h-6 w-6" />
-          </a>
-          <a 
-            href={`mailto:${socialLinks.email}`}
+            href={`mailto:${SOCIAL_LINKS.email}`}
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
             aria-label="Email"
           >

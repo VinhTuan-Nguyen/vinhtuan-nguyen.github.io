@@ -1,7 +1,7 @@
 import React from 'react';
-import { Github as GitHub, Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import { Github as GitHub, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { socialLinks } from '../utils/data';
+import { SOCIAL_LINKS } from '../utils/data/consts/SocialLinks.const';
 import ContactForm from '../components/ContactForm';
 
 const Contact: React.FC = () => {
@@ -44,10 +44,10 @@ const Contact: React.FC = () => {
                       Email
                     </h4>
                     <a 
-                      href={`mailto:${socialLinks.email}`}
+                      href={`mailto:${SOCIAL_LINKS.email}`}
                       className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
-                      {socialLinks.email}
+                      {SOCIAL_LINKS.email}
                     </a>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
                 
                 <div className="flex space-x-4">
                   <a 
-                    href={socialLinks.github}
+                    href={SOCIAL_LINKS.github}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
                     <GitHub className="h-5 w-5" />
                   </a>
                   <a 
-                    href={socialLinks.linkedin}
+                    href={SOCIAL_LINKS.linkedin}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
@@ -109,16 +109,7 @@ const Contact: React.FC = () => {
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a 
-                    href={socialLinks.twitter}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="h-5 w-5" />
-                  </a>
-                  <a 
-                    href={`mailto:${socialLinks.email}`}
+                    href={`mailto:${SOCIAL_LINKS.email}`}
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
                     aria-label="Email"
                   >

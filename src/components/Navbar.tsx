@@ -5,7 +5,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, siwtchTheme } = useTheme();
   const { t, language, changeLanguage } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
           to="/"
           className="text-xl md:text-2xl font-bold transition-colors duration-300 text-gray-900 dark:text-white"
         >
-          John Doe
+          Tuan Nguyen
         </Link>
 
         {/* Desktop Navigation */}
@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
 
           {/* Theme toggle */}
           <button
-            onClick={toggleTheme}
+            onClick={siwtchTheme}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
           >
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
 
           {/* Theme toggle - mobile */}
           <button
-            onClick={toggleTheme}
+            onClick={siwtchTheme}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
           >

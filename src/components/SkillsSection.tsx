@@ -1,8 +1,8 @@
 import React from 'react';
-import type { Skill } from '../utils/data';
+import { IFSkill } from '../utils/interfaces/IFSkill';
 
 interface SkillsSectionProps {
-  skills: Skill[];
+  skills: IFSkill[];
 }
 
 const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {

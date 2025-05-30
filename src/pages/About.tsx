@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { skills } from '../utils/data';
+import { SKILLS } from '../utils/data/consts/Skills.const';
 import SkillsSection from '../components/SkillsSection';
 import ResumeButton from '../components/ResumeButton';
 
@@ -86,7 +86,7 @@ const About: React.FC = () => {
                 {t('about.skills.title')}
               </h2>
               
-              <SkillsSection skills={skills} />
+              <SkillsSection skills={SKILLS} />
             </section>
             
             {/* Work Experience */}
