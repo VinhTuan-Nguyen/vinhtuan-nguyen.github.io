@@ -21,7 +21,7 @@ const Home: React.FC = () => {
               <div className="relative">
                 <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
                   <img 
-                    src="../../src/assets/images/CV_Avatar.jpg"
+                    src="/src/assets/images/CV_Avatar.jpg"
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />

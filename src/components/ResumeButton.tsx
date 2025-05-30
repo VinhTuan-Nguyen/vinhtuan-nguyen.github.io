@@ -16,7 +16,7 @@ const ResumeButton: React.FC<ResumeButtonProps> = ({
   const { t } = useLanguage();
   
   // This would be the path to your actual resume file
-  const resumePath = '/path-to-your-resume.pdf';
+  const resumePath = '/src/assets/resumes/CV_TuanNV-Java-Junior.docx';
   
   const baseStyles = "font-medium rounded-md transition-all duration-300 inline-flex items-center justify-center";
   const sizeStyles = "px-4 py-2 text-sm";
