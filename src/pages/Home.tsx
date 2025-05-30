@@ -16,10 +16,29 @@ const Home: React.FC = () => {
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row items-center">
+            {/* Profile Image */}
+            <div className="md:w-1/2 flex justify-center">
+              <div className="relative">
+                <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
+                  <img 
+                    src="src/assets/images/CV_Avatar.jpg"
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 dark:bg-blue-500 rounded-full opacity-20 z-0"></div>
+                <div className="absolute -top-6 -left-6 w-24 h-24 bg-indigo-600 dark:bg-indigo-500 rounded-full opacity-20 z-0"></div>
+              </div>
+            </div>
+
             {/* Text Content */}
-            <div className="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+            <div className="md:w-1/2 mt-10 md:mb-0 md:pr-10">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                {t('home.headline')}
+                {t('home.headline1')}
+              </h1>
+
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                {t('home.headline2')}
               </h1>
               
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
@@ -27,13 +46,13 @@ const Home: React.FC = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <Link 
+                {/* <Link 
                   to="/projects"
                   className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition duration-300 transform hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 dark:bg-blue-500 dark:hover:bg-blue-600"
                 >
                   {t('home.cta.projects')}
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </Link> */}
                 
                 <Link 
                   to="/about"
@@ -43,21 +62,6 @@ const Home: React.FC = () => {
                 </Link>
                 
                 <ResumeButton variant="outline" className="mt-4 md:mt-0" />
-              </div>
-            </div>
-            
-            {/* Profile Image */}
-            <div className="md:w-1/2 flex justify-center">
-              <div className="relative">
-                <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
-                  <img 
-                    src="~/assets/images/avatar.svg"
-                    alt="Profile"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 dark:bg-blue-500 rounded-full opacity-20 z-0"></div>
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-indigo-600 dark:bg-indigo-500 rounded-full opacity-20 z-0"></div>
               </div>
             </div>
           </div>
