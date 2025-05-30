@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
           to="/"
           className="text-xl md:text-2xl font-bold transition-colors duration-300 text-gray-900 dark:text-white"
         >
-          Tuan Nguyen
+          {t('nav.owner')}
         </Link>
 
         {/* Desktop Navigation */}
