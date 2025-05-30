@@ -1,19 +1,5 @@
-export interface Project {
-  id: string;
-  title: string;
-  shortDescription: string;
-  fullDescription: string;
-  thumbnail: string;
-  images: string[];
-  category: 'web' | 'mobile' | 'design';
-  technologies: string[];
-  challenges: string;
-  solutions: string;
-  results: string;
-  demoUrl?: string;
-  repoUrl?: string;
-  featured: boolean;
-}
+import { IFProject } from "./interfaces/IFProject";
+
 
 export interface Certificate {
   id: string;
@@ -30,7 +16,7 @@ export interface Skill {
   items: string[];
 }
 
-export const projects: Project[] = [
+export const projects: IFProject[] = [
   {
     id: 'ecommerce-platform',
     title: 'E-Commerce Platform',

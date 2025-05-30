@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+//import { useLanguage } from '../contexts/LanguageContext';
 import type { Certificate } from '../utils/data';
 
 interface CertificateSliderProps {
@@ -8,7 +8,7 @@ interface CertificateSliderProps {
 }
 
 const CertificateSlider: React.FC<CertificateSliderProps> = ({ certificates }) => {
-  const { t } = useLanguage();
+  //const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const goToPrevious = () => {

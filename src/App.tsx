@@ -14,7 +14,7 @@ import Contact from './pages/Contact';
 function App() {
   useEffect(() => {
     // Update the title when the component mounts
-    document.title = 'My Portfolio';
+    document.title = 'Nguyen Vinh Tuan - Portfolio';
   }, []);
 
   return (
@@ -24,7 +24,7 @@ function App() {
           <Navbar />
           <main className="flex-grow">
             <Routes>
-              <Route path="/portfolio" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:id" element={<ProjectDetail />} />
               <Route path="/about" element={<About />} />

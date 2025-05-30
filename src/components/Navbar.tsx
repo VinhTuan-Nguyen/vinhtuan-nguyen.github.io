@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Moon, Sun, Menu, X, Globe } from 'lucide-react';
+import { Moon, Sun, Menu, X, Languages } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -18,12 +18,12 @@ const Navbar: React.FC = () => {
   const toggleLanguage = () => {
     changeLanguage(language === 'en' ? 'vi' : 'en');
   };
-
+  
   // Close menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
-
+  
   // Add scroll event listener
   useEffect(() => {
     const handleScroll = () => {
@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
             aria-label="Toggle language"
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
           >
-            <Globe className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+            <Languages className="h-5 w-5 text-gray-700 dark:text-gray-300" />
             <span className="sr-only">
               {language === 'en' ? 'Switch to Vietnamese' : 'Switch to English'}
             </span>
@@ -118,7 +118,7 @@ const Navbar: React.FC = () => {
             aria-label="Toggle language"
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
           >
-            <Globe className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+            <Languages className="h-5 w-5 text-gray-700 dark:text-gray-300" />
           </button>
 
           {/* Theme toggle - mobile */}
