@@ -5,6 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { PROJECTS } from '../utils/data/consts/Projects.const';
 import ProjectCard from '../components/ProjectCard';
 import ResumeButton from '../components/ResumeButton';
+import o from 'src/assets/images/CV_Avatar.jpg';
 
 const Home: React.FC = () => {
   const { t } = useLanguage();
