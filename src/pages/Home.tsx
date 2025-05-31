@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { PROJECTS } from '../utils/data/consts/Projects.const';
 import ProjectCard from '../components/ProjectCard';
 import ResumeButton from '../components/ResumeButton';
-import avatar from '/src/assets/images/avatar.jpg';
+import avatar from '/public/assets/images/avatar.jpg';
 
 const Home: React.FC = () => {
   const { t } = useLanguage();
@@ -20,15 +20,15 @@ const Home: React.FC = () => {
             {/* Profile Image */}
             <div className="md:w-1/2 flex justify-center">
               <div className="relative">
-                <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
+                <div className="absolute -top-6 -left-6 w-24 h-24 bg-indigo-600 dark:bg-indigo-500 rounded-full opacity-20 z-0"></div>
+                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg shadow-blue-500/50 z-10">
                   <img 
                     src={avatar}
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 dark:bg-blue-500 rounded-full opacity-20 z-0"></div>
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-indigo-600 dark:bg-indigo-500 rounded-full opacity-20 z-0"></div>
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 dark:bg-blue-500 rounded-full opacity-40 z-0"></div>
               </div>
             </div>
 
