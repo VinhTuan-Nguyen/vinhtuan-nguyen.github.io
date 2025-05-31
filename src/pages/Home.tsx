@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { PROJECTS } from '../utils/data/consts/Projects.const';
 import ProjectCard from '../components/ProjectCard';
 import ResumeButton from '../components/ResumeButton';
-import avatar from '/public/assets/images/avatar.jpg';
+import avatar from '/assets/images/avatar.jpg';
 
 const Home: React.FC = () => {
   const { t } = useLanguage();
@@ -34,27 +34,19 @@ const Home: React.FC = () => {
 
             {/* Text Content */}
             <div className="md:w-1/2 mt-10 md:mb-0 md:pr-10">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <h1 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 {t('home.headline1')}
               </h1>
 
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <h1 className="text-center md:text-left text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 {t('home.headline2')}
               </h1>
               
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+              <p className="text-center md:text-left text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
                 {t('home.intro')}
               </p>
               
-              <div className="flex flex-wrap gap-4">
-                {/* <Link 
-                  to="/projects"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition duration-300 transform hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 dark:bg-blue-500 dark:hover:bg-blue-600"
-                >
-                  {t('home.cta.projects')}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link> */}
-                
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-4">                
                 <Link 
                   to="/about"
                   className="inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-gray-100 text-gray-800 font-medium rounded-md shadow-sm transition duration-300 transform hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
@@ -74,10 +66,10 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center mb-12">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2 className="text-2xl md:text-3xl text-center md:text-left font-bold text-gray-900 dark:text-white mb-2">
                 {t('projects.title')}
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-center md:text-left text-gray-600 dark:text-gray-400">
                 {t('projects.subtitle')}
               </p>
             </div>
@@ -86,7 +78,7 @@ const Home: React.FC = () => {
               to="/projects"
               className="mt-4 md:mt-0 inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
             >
-              View all projects
+              {t('projects.all')}
               <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>

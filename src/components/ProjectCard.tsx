@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         />
         {project.featured && (
           <div className="absolute top-3 right-3 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
-            Featured
+            {t('projects.featured')}
           </div>
         )}
       </div>

@@ -43,9 +43,9 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { to: '/', label: t('nav.home') },
     { to: '/projects', label: t('nav.projects') },
-    { to: '/about', label: t('nav.about') },
     { to: '/certificates', label: t('nav.certificates') },
     { to: '/contact', label: t('nav.contact') },
+    { to: '/about', label: t('nav.about') },
   ];
 
   return (
