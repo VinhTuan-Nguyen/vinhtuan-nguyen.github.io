@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Github as GitHub, Linkedin, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { SOCIAL_LINKS } from '../utils/data/consts/SocialLinks.const';
+import { CONTACTS } from '../utils/data/consts/Contacts.const';
+import { PAGE_LINKS } from '../utils/data/consts/PageLinks.const';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -14,32 +15,26 @@ const Footer: React.FC = () => {
         {/* Top section with logo and nav links */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <Link to="/" className="text-xl font-bold mb-4 md:mb-0 text-gray-900 dark:text-white">
-            John Doe
+            {t('home.headline1')}
           </Link>
           
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-            <Link to="/" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
-              {t('nav.home')}
-            </Link>
-            <Link to="/projects" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
-              {t('nav.projects')}
-            </Link>
-            <Link to="/about" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
-              {t('nav.about')}
-            </Link>
-            <Link to="/certificates" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
-              {t('nav.certificates')}
-            </Link>
-            <Link to="/contact" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
-              {t('nav.contact')}
-            </Link>
+            {PAGE_LINKS().map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
         
         {/* Middle section with social links */}
         <div className="flex justify-center space-x-6 mb-8">
           <a 
-            href={SOCIAL_LINKS.github}
+            href={CONTACTS.github}
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
@@ -48,7 +43,7 @@ const Footer: React.FC = () => {
             <GitHub className="h-6 w-6" />
           </a>
           <a 
-            href={SOCIAL_LINKS.linkedin}
+            href={CONTACTS.linkedin}
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
@@ -57,7 +52,7 @@ const Footer: React.FC = () => {
             <Linkedin className="h-6 w-6" />
           </a>
           <a 
-            href={`mailto:${SOCIAL_LINKS.email}`}
+            href={`mailto:${CONTACTS.email}`}
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
             aria-label="Email"
           >

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Github as GitHub, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { SOCIAL_LINKS } from '../utils/data/consts/SocialLinks.const';
+import { CONTACTS } from '../utils/data/consts/Contacts.const';
 import ContactForm from '../components/ContactForm';
 
 const Contact: React.FC = () => {
@@ -41,13 +41,13 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                      Email
+                      {t('contact.form.email')}
                     </h4>
                     <a 
-                      href={`mailto:${SOCIAL_LINKS.email}`}
+                      href={`mailto:${CONTACTS.email}`}
                       className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
-                      {SOCIAL_LINKS.email}
+                      {CONTACTS.email}
                     </a>
                   </div>
                 </div>
@@ -59,10 +59,10 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                      Location
+                      {t('contact.form.location')}
                     </h4>
                     <p className="text-gray-900 dark:text-white">
-                      San Francisco, CA
+                      {CONTACTS.location}
                     </p>
                   </div>
                 </div>
@@ -74,10 +74,10 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                      Phone
+                      {t('contact.form.phone')}
                     </h4>
                     <p className="text-gray-900 dark:text-white">
-                      +1 (555) 123-4567
+                      {CONTACTS.phone}
                     </p>
                   </div>
                 </div>
@@ -86,12 +86,12 @@ const Contact: React.FC = () => {
               {/* Social Links */}
               <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                 <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4">
-                  Connect with me
+                  {t('social.link.title')}
                 </h4>
                 
                 <div className="flex space-x-4">
                   <a 
-                    href={SOCIAL_LINKS.github}
+                    href={CONTACTS.github}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
                     <GitHub className="h-5 w-5" />
                   </a>
                   <a 
-                    href={SOCIAL_LINKS.linkedin}
+                    href={CONTACTS.linkedin}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
@@ -109,7 +109,7 @@ const Contact: React.FC = () => {
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a 
-                    href={`mailto:${SOCIAL_LINKS.email}`}
+                    href={`mailto:${CONTACTS.email}`}
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
                     aria-label="Email"
                   >

@@ -95,10 +95,10 @@ const Home: React.FC = () => {
       <section className="py-16 bg-blue-600 dark:bg-blue-800">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-            Interested in working together?
+            {t('home.cta.interested')}
           </h2>
           <p className="text-blue-100 max-w-2xl mx-auto mb-8">
-            I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+            {t('home.cta.opportunities')}
           </p>
           <Link 
             to="/contact"

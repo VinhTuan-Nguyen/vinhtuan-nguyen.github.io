@@ -22,8 +22,18 @@ const ContactForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // In a real implementation, you would send form data to a backend
-    // For now, we'll simulate a successful submission
+    fetch('http://localhost:4500/send-mail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    }).then(res => {
+      if(res.status === 201) {
+        alert(res.json())
+      } else alert(res.json())
+    })
+
     setTimeout(() => {
       setFormStatus('success');
       setFormData({

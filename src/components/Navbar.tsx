@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Moon, Sun, Menu, X, Languages } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
+import { PAGE_LINKS } from '../utils/data/consts/PageLinks.const';
 
 const Navbar: React.FC = () => {
   const { theme, siwtchTheme } = useTheme();
@@ -40,14 +41,6 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  const navLinks = [
-    { to: '/', label: t('nav.home') },
-    { to: '/projects', label: t('nav.projects') },
-    { to: '/certificates', label: t('nav.certificates') },
-    { to: '/contact', label: t('nav.contact') },
-    { to: '/about', label: t('nav.about') },
-  ];
-
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -62,12 +55,12 @@ const Navbar: React.FC = () => {
           to="/"
           className="text-xl md:text-2xl font-bold transition-colors duration-300 text-gray-900 dark:text-white"
         >
-          {t('nav.master')}
+          {t('nav.logo')}
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
+          {PAGE_LINKS().map((link) => (
             <Link
               key={link.to}
               to={link.to}
@@ -155,7 +148,7 @@ const Navbar: React.FC = () => {
         } md:hidden`}
       >
         <div className="container mx-auto px-6 py-4 flex flex-col space-y-8">
-          {navLinks.map((link) => (
+          {PAGE_LINKS().map((link) => (
             <Link
               key={link.to}
               to={link.to}
