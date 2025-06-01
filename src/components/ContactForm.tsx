@@ -22,7 +22,7 @@ const ContactForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    fetch(`${import.meta.env.VITE_SEND_MAIL_SERVER}/send-mail`, {
+    fetch(`https://send-mail-hazel.vercel.app/send-mail`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
