@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         />
         {project.featured && (
           <div className="absolute top-3 right-3 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
-            {t('projects.featured')}
+            {t('project.featured')}
           </div>
         )}
       </div>
@@ -48,7 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           ))}
           {project.technologies.length > 3 && (
             <span className="inline-block bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded-full">
-              +{project.technologies.length - 3} more
+              {t('project.more', {"{0}": (project.technologies.length - 3).toString()})}
             </span>
           )}
         </div>

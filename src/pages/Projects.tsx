@@ -2,23 +2,17 @@ import React, { useState } from 'react';
 import { PROJECTS } from '../utils/data/consts/Projects.const';
 import { useLanguage } from '../contexts/LanguageContext';
 import ProjectCard from '../components/ProjectCard';
-
-type Category = 'all' | 'web' | 'mobile' | 'design';
+import { CategoryAll } from '../utils/Types';
+import { CATEGORIES } from '../utils/data/consts/Categories.const';
 
 const Projects: React.FC = () => {
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState<Category>('all');
+  const [activeCategory, setActiveCategory] = useState<CategoryAll>('all');
   
   const filteredProjects = activeCategory === 'all' 
     ? PROJECTS 
-    : PROJECTS.filter(p => p.category === activeCategory);
-  
-  const categories: { value: Category; label: string }[] = [
-    { value: 'all', label: t('projects.filter.all') },
-    { value: 'web', label: t('projects.filter.web') },
-    { value: 'mobile', label: t('projects.filter.mobile') },
-    { value: 'design', label: t('projects.filter.design') }
-  ];
+    : PROJECTS.filter(p => p.categories.includes(activeCategory));
+
   
   return (
     <div className="min-h-screen pt-24 pb-16">
@@ -26,16 +20,16 @@ const Projects: React.FC = () => {
         {/* Page Header */}
         <div className="mb-12 text-center max-w-3xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {t('projects.title')}
+            {t('project.title')}
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            {t('projects.subtitle')}
+            {t('project.subtitle')}
           </p>
         </div>
         
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center mb-12 gap-2">
-          {categories.map(category => (
+          {CATEGORIES().map(category => (
             <button
               key={category.value}
               onClick={() => setActiveCategory(category.value)}
@@ -61,7 +55,7 @@ const Projects: React.FC = () => {
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-600 dark:text-gray-400">
-              No projects found in this category. Please check back later!
+              {t('project.filter.none')}
             </p>
           </div>
         )}

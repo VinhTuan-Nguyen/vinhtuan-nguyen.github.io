@@ -44,10 +44,10 @@ const Contact: React.FC = () => {
                       {t('contact.form.email')}
                     </h4>
                     <a 
-                      href={`mailto:${CONTACTS.email}`}
+                      href={`mailto:${CONTACTS().email}`}
                       className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
-                      {CONTACTS.email}
+                      {CONTACTS().email}
                     </a>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
                       {t('contact.form.location')}
                     </h4>
                     <p className="text-gray-900 dark:text-white">
-                      {CONTACTS.location}
+                      {CONTACTS().location}
                     </p>
                   </div>
                 </div>
@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
                       {t('contact.form.phone')}
                     </h4>
                     <p className="text-gray-900 dark:text-white">
-                      {CONTACTS.phone}
+                      {CONTACTS().phone}
                     </p>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
                 
                 <div className="flex space-x-4">
                   <a 
-                    href={CONTACTS.github}
+                    href={CONTACTS().github}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
                     <GitHub className="h-5 w-5" />
                   </a>
                   <a 
-                    href={CONTACTS.linkedin}
+                    href={CONTACTS().linkedin}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
@@ -109,7 +109,7 @@ const Contact: React.FC = () => {
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a 
-                    href={`mailto:${CONTACTS.email}`}
+                    href={`mailto:${CONTACTS().email}`}
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
                     aria-label="Email"
                   >

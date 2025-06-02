@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
         {/* Middle section with social links */}
         <div className="flex justify-center space-x-6 mb-8">
           <a 
-            href={CONTACTS.github}
+            href={CONTACTS().github}
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
             <GitHub className="h-6 w-6" />
           </a>
           <a 
-            href={CONTACTS.linkedin}
+            href={CONTACTS().linkedin}
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
             <Linkedin className="h-6 w-6" />
           </a>
           <a 
-            href={`mailto:${CONTACTS.email}`}
+            href={`mailto:${CONTACTS().email}`}
             className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
             aria-label="Email"
           >

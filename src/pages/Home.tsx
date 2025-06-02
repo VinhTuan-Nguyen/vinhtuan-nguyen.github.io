@@ -67,10 +67,10 @@ const Home: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center mb-12">
             <div>
               <h2 className="text-2xl md:text-3xl text-center md:text-left font-bold text-gray-900 dark:text-white mb-2">
-                {t('projects.title')}
+                {t('project.title')}
               </h2>
               <p className="text-center md:text-left text-gray-600 dark:text-gray-400">
-                {t('projects.subtitle')}
+                {t('project.subtitle')}
               </p>
             </div>
             
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
               to="/projects"
               className="mt-4 md:mt-0 inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
             >
-              {t('projects.all')}
+              {t('project.all')}
               <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>

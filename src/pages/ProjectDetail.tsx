@@ -31,24 +31,24 @@ const ProjectDetail: React.FC = () => {
       prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
     );
   };
-  
+
   // If project is not found
   if (!project) {
     return (
       <div className="min-h-screen pt-24 pb-16 flex flex-col items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Project Not Found
+            {t('project.notFound')}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            The project you're looking for doesn't exist or has been removed.
+            {t('project.notFound.subTitle')}
           </p>
           <Link 
             to="/projects"
             className="inline-flex items-center font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Projects
+            {t('project.backLink')}
           </Link>
         </div>
       </div>
@@ -65,7 +65,7 @@ const ProjectDetail: React.FC = () => {
             className="inline-flex items-center font-medium text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Projects
+            {t('project.backLink')}
           </Link>
         </div>
         
@@ -74,9 +74,6 @@ const ProjectDetail: React.FC = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {project.title}
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300">
-            {project.shortDescription}
-          </p>
         </div>
         
         {/* Project Image Slider */}
@@ -132,81 +129,171 @@ const ProjectDetail: React.FC = () => {
           {/* Main Content */}
           <div className="lg:col-span-2">
             <div className="prose prose-lg dark:prose-invert max-w-none">
-              <h2>{t('project.technologies')}</h2>
+              <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
+                {t('project.description')}
+              </h2>
+              <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
+                {project.fullDescription.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="prose prose-lg dark:prose-invert max-w-none pt-5">
+              <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
+                {t('project.responsibilities')}
+              </h2>
+              <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
+                {project.responsibility.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            {project.achievements && (
+              <div className="prose prose-lg dark:prose-invert max-w-none pt-5">
+                <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
+                  {t('project.achievements')}
+                </h2>
+                <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
+                  {project.achievements.map((item,index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          
+            <div className="prose prose-lg dark:prose-invert max-w-none pt-5">
+              <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
+                {t('project.technologies')}
+              </h2>
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="inline-block bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
+                    className="inline-block bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
                   >
                     {tech}
                   </span>
                 ))}
-              </div>
-              
-              <div className="mb-8">
-                <h2>{t('project.challenges')}</h2>
-                <p>{project.challenges}</p>
-                <p>{project.solutions}</p>
-              </div>
-              
-              <div>
-                <h2>{t('project.results')}</h2>
-                <p>{project.results}</p>
               </div>
             </div>
           </div>
           
           {/* Sidebar */}
           <div>
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
+            <div className="bg-gray-200 dark:bg-gray-800 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                Project Details
+                {t('project.details')}
               </h3>
               
               <div className="space-y-6">
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                    Project Type
+                    {t('project.type')}
                   </h4>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.projectTypes.map(item => (
+                      <span className="inline-block bg-gray-800 dark:bg-white text-white dark:text-gray-800 px-3 py-1 rounded-full text-sm">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                   <p className="text-gray-900 dark:text-white">
-                    {project.category === 'web' && 'Web Development'}
-                    {project.category === 'mobile' && 'Mobile Application'}
-                    {project.category === 'design' && 'UX/UI Design'}
+                    
                   </p>
                 </div>
-                
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
-                    Links
-                  </h4>
-                  
-                  <div className="space-y-2">
-                    {project.demoUrl && (
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-300"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        {t('project.liveDemo')}
-                      </a>
-                    )}
+
+                <div className='grid grid-cols-2 gap-4'>
+                  <div>
+                    <div className='pb-5'>
+                      <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+                        {t('project.companyName')}
+                      </h4>
+                      <p className="text-gray-900 dark:text-white">
+                        {project.companyName}
+                      </p>
+                    </div>
+
+                    <div className='pb-5'>
+                      <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+                        {t('project.teamsize')}
+                      </h4>
+                      <p className="text-gray-900 dark:text-white">
+                        {t('project.teamMembers', {'{0}': project.teamsize.toString()})}
+                      </p>
+                    </div>
                     
-                    {project.repoUrl && (
-                      <a
-                        href={project.repoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center w-full py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white rounded-md transition-colors duration-300"
-                      >
-                        <Github className="h-4 w-4 mr-2" />
-                        {t('project.sourceCode')}
-                      </a>
-                    )}
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+                        {t('project.role')}
+                      </h4>
+                      <p className="text-gray-900 dark:text-white">
+                        {project.role}
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <div className='pb-5'>
+                      <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+                        {t('project.fromDate')}
+                      </h4>
+                      <p className="text-gray-900 dark:text-white">
+                        {project.fromDate}
+                      </p>
+                    </div>
+                    <div className='pb-5'>
+                      <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+                        {t('project.toDate')}
+                      </h4>
+                      <p className="text-gray-900 dark:text-white">
+                        {project.toDate}
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
+                        {t('project.methodology')}
+                      </h4>
+                      <p className="text-gray-900 dark:text-white">
+                        {project.methodology}
+                      </p>
+                    </div>
                   </div>
                 </div>
+                
+                {project.demoUrl && project.repoUrl && (
+                  <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
+                      {t('project.links')}
+                    </h4>
+                    
+                    <div className="space-y-2">
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-300"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          {t('project.liveDemo')}
+                        </a>
+                      )}
+                      
+                      {project.repoUrl && (
+                        <a
+                          href={project.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center w-full py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white rounded-md transition-colors duration-300"
+                        >
+                          <Github className="h-4 w-4 mr-2" />
+                          {t('project.sourceCode')}
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

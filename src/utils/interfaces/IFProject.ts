@@ -1,16 +1,24 @@
+import { Category } from "../Types";
+
 export interface IFProject {
   id: string;
   title: string;
-  shortDescription: string;
-  fullDescription: string;
+  featured: boolean;
+  shortDescription: string
+  fullDescription: string[];
   thumbnail: string;
   images: string[];
-  category: 'web' | 'mobile' | 'design';
+  projectTypes: string[];
+  categories: Category[];
   technologies: string[];
-  challenges: string;
-  solutions: string;
-  results: string;
+  teamsize: number;
+  fromDate: string;
+  toDate: string;
+  role: string;
+  responsibility: string[];
+  achievements?: string[];
+  companyName?: string;
   demoUrl?: string;
   repoUrl?: string;
-  featured: boolean;
+  methodology: string
 }

@@ -2,59 +2,106 @@ import { IFProject } from "../../interfaces/IFProject";
 
 export const PROJECTS: IFProject[] = [
   {
-    id: 'ecommerce-platform',
-    title: 'E-Commerce Platform',
-    shortDescription: 'A full-featured online store with payment integration and admin dashboard',
-    fullDescription: 'A complete e-commerce solution built with React, Node.js, and MongoDB. Features include product listings, shopping cart, user authentication, payment processing, and an admin dashboard for managing products and orders.',
-    thumbnail: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    images: [
-      'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      'https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    id: 'ONP25',
+    title: 'ORION New Price',
+    methodology: 'Scrum/Agile',
+    shortDescription: "A module to oversee pricing across ORION's ecosystem, encompassing both its domestic and international member companies.",
+    fullDescription: [
+      "Development web application follows request of customer.",
+      "Using X++ (.Net Framework) to build excel upload function, allowing to import into database up to 10k records at the same time."
     ],
-    category: 'web',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux', 'Stripe API'],
-    challenges: 'Creating a secure payment system and ensuring a smooth user experience across different devices was challenging.',
-    solutions: 'Implemented Stripe for secure payments and used responsive design principles to ensure compatibility across devices.',
-    results: 'Successfully launched with positive user feedback. Improved checkout conversion by 15% compared to the previous system.',
-    demoUrl: 'https://example.com/demo',
-    repoUrl: 'https://github.com/example/project',
-    featured: true
+    thumbnail: '/assets/images/D365-Logo.png',
+    images: [
+      '/assets/images/D365-Logo.png',
+      '/assets/images/d365-slider-1.jpg',
+      '/assets/images/d365-slider-2.jpg',
+    ],
+    categories: ['web', 'd365', 'crm'],
+    technologies: ['.Net Framework', 'X++', 'SQL', 'Dynamics 365 Finance & Operations'],
+    teamsize: 5,
+    featured: true,
+    fromDate: 'Jan/2025',
+    toDate: 'May/2025',
+    responsibility: [
+      "Worked as an official Low-code Developer at company",
+      "Creating Flowchart Diagram based on Function Detail Design (FDD)",
+      "Implement the features according to the Flow chart and FDD",
+      "Creating test case scenarios & executing unit tests.",
+      "Perform integration tests based on available scenarios.",
+      "Coding, fixing bugs, resolving problems.",
+    ],
+    role: '.Net Developer',
+    achievements: [
+      "Ensure monthly release schedule with customers.",
+      "Completed all client requirements & released product 2 weeks ahead of schedule.",
+      "Received praise and an honourable award from the director and the client for completing the project with the best quality"
+    ],
+    companyName: 'FPT Software',
+    projectTypes: ['Web Development', 'CRM', 'D365 F&O', 'Unit Test', 'SIT', 'Flowchart Design']
+
   },
   {
-    id: 'fitness-tracker',
-    title: 'Fitness Tracker App',
-    shortDescription: 'Mobile application for tracking workouts and nutrition',
-    fullDescription: 'A comprehensive fitness tracking application that allows users to log workouts, track nutrition, set goals, and monitor progress over time. Features include customizable workout plans, calorie tracking, and progress visualizations.',
-    thumbnail: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    images: [
-      'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      'https://images.pexels.com/photos/4498362/pexels-photo-4498362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    id: 'UIUXS2',
+    title: 'ANA Airline UI/UX',    
+    thumbnail: '/assets/images/All-Nippon-Airways-logo.jpg',
+    companyName: 'FPT Software',
+    fromDate: 'Jan/2024',
+    toDate: 'Oct/2024',
+    teamsize: 15,
+    methodology: 'Waterfall',
+    shortDescription: "N/A",
+    featured: false,
+    role: 'Front-end Developer',
+    fullDescription: [
+      "This project develops a website to handle all functionalities that end-users can interact with, for one of the largest airline systems in Japan."
     ],
-    category: 'mobile',
-    technologies: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
-    challenges: 'Designing an intuitive interface for tracking complex workout routines and nutritional data.',
-    solutions: 'Conducted user testing to refine the UI and implemented dashboard visualizations for easy progress tracking.',
-    results: 'Achieved 4.7/5 star rating on app stores with over 10,000 active users.',
-    demoUrl: 'https://example.com/demo',
-    repoUrl: 'https://github.com/example/project',
-    featured: true
+    images: [
+      '/assets/images/All-Nippon-Airways-logo.jpg'
+    ],
+    categories: ['web', 'design'],
+    technologies: ['Angular 18', 'HTML/CSS', 'Javascript', 'TypeScript', 'Karma/Jasmine'],
+    responsibility: [
+      "Worked as an official Front-end Developer at company.",
+      "Making conversation with BA and the onsite team (Japan) to get and clarify requirements.",
+      "Analysis requirement and find out solutions and then present the idea to team members.",
+      "Coding, fixing bugs, resolving problems."
+    ],
+    achievements: [
+      "4 consecutive months of receiving MSC type A rating"
+    ],
+    projectTypes: ['Web Development', 'Front-end', 'Unit Test', ]
   },
   {
-    id: 'portfolio-redesign',
-    title: 'Agency Website Redesign',
-    shortDescription: 'UX/UI redesign for a digital marketing agency',
-    fullDescription: 'Complete redesign of a digital marketing agency\'s website focusing on improved user experience, accessibility, and conversion optimization. The project included user research, wireframing, prototyping, and implementation.',
-    thumbnail: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    images: [
-      'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      'https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    id: 'PETMULESOFT',
+    title: 'Petronas - Mulesoft Microservices',    
+    thumbnail: '/assets/images/petronas-logo.png',
+    companyName: 'FPT Software',
+    fromDate: 'Jan/2024',
+    toDate: 'Oct/2024',
+    teamsize: 15,
+    methodology: 'Waterfall',
+    shortDescription: "N/A",
+    featured: true,
+    role: 'Front-end Developer',
+    fullDescription: [
+      "This project develops a website to handle all functionalities that end-users can interact with, for one of the largest airline systems in Japan."
     ],
-    category: 'design',
-    technologies: ['Figma', 'Adobe XD', 'HTML/CSS', 'JavaScript'],
-    challenges: 'Balancing aesthetic design with performance optimization and maintaining brand identity.',
-    solutions: 'Created a design system to ensure consistency and used performance benchmarking to optimize load times.',
-    results: 'Increased site traffic by 35% and improved lead generation by 20% post-launch.',
-    demoUrl: 'https://example.com/demo',
-    featured: false
-  }
+    images: [
+      '/assets/images/petronas-logo.png',
+      '/assets/images/mulesoft-logo.png',
+      '/assets/images/mulesoft-api-led.png',
+    ],
+    categories: ['api'],
+    technologies: ['Angular 18', 'HTML/CSS', 'Javascript', 'TypeScript', 'Karma/Jasmine'],
+    responsibility: [
+      "Worked as an official Front-end Developer at company.",
+      "Making conversation with BA and the onsite team (Japan) to get and clarify requirements.",
+      "Analysis requirement and find out solutions and then present the idea to team members.",
+      "Coding, fixing bugs, resolving problems."
+    ],
+    achievements: [
+      "4 consecutive months of receiving MSC type A rating"
+    ],
+    projectTypes: ['Web Development', 'Front-end', 'Unit Test', ]
+  },
 ];

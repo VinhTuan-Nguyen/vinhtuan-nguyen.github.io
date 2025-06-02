@@ -7,6 +7,6 @@ export interface ThemeContextType {
 
 export interface LanguageContextType {
   language: Language;
-  t: (key: string) => string;
+  t: (key: string, replace?: {[key: string]: string}) => string;
   changeLanguage: (lang: Language) => void;
 }

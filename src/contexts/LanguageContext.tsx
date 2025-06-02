@@ -15,13 +15,13 @@ export const useLanguage = () => {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const getInitialLanguage = (): Language => {
     if (typeof window === 'undefined') return 'en';
-    
+
     const savedLanguage = localStorage.getItem('language') as Language;
-    return savedLanguage && ['en', 'vi'].includes(savedLanguage) 
-      ? savedLanguage 
+    return savedLanguage && ['en', 'vi'].includes(savedLanguage)
+      ? savedLanguage
       : 'en';
   };
-  
+
   const [language, setLanguage] = useState<Language>(getInitialLanguage);
 
   useEffect(() => {
@@ -35,12 +35,19 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   // Translation function
-  const t = (key: string): string => {
-    const translation = TRANSLATIONS[language]?.[key];
+  const t = (key: string, replace?: { [key: string]: string }): string => {
+    let translation = TRANSLATIONS[language]?.[key];
     if (!translation) {
       console.warn(`Translation missing for key: ${key} in language: ${language}`);
-      return TRANSLATIONS.en[key] || key;
+      return key;
     }
+
+    if (replace) {
+      for (const key in replace) {
+        translation = key ? translation.replace(key,replace[key]) : translation;
+      }
+    }
+
     return translation;
   };
 
