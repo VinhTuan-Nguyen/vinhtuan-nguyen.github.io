@@ -4,9 +4,10 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { SKILLS } from '../utils/data/consts/Skills.const';
 import SkillsSection from '../components/SkillsSection';
 import ResumeButton from '../components/ResumeButton';
+import { CONTACTS } from '../utils/data/consts/Contacts.const';
 
 const About: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <div className="min-h-screen pt-24 pb-16">
@@ -34,17 +35,29 @@ const About: React.FC = () => {
                 
                 <div className="mt-6 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                    John Doe
+                    {CONTACTS().name[language]}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    Full-Stack Developer
+                    {CONTACTS().jobTitle[language]}
                   </p>
                   <div className="space-y-2">
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      <span className="font-medium">Location:</span> San Francisco, CA
+                      <span className="font-medium">
+                        {t('contact.form.location')+' '}
+                      </span> 
+                      {CONTACTS().location[language]}
                     </p>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      <span className="font-medium">Email:</span> john.doe@example.com
+                      <span className="font-medium">
+                        {t('contact.form.phone')+' '}
+                      </span>
+                      {CONTACTS().phone[language]}
+                    </p>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      <span className="font-medium">
+                        {t('contact.form.email')+' '}
+                      </span>
+                      {CONTACTS().email}
                     </p>
                   </div>
                   

@@ -6,9 +6,10 @@ import { PROJECTS } from '../utils/data/consts/Projects.const';
 import ProjectCard from '../components/ProjectCard';
 import ResumeButton from '../components/ResumeButton';
 import avatar from '/assets/images/avatar.jpg';
+import { CONTACTS } from '../utils/data/consts/Contacts.const';
 
 const Home: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const featuredProjects = PROJECTS.filter(p => p.featured);
   
   return (
@@ -35,11 +36,11 @@ const Home: React.FC = () => {
             {/* Text Content */}
             <div className="md:w-1/2 mt-10 md:mb-0 md:pr-10">
               <h1 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                {t('home.headline1')}
+                {CONTACTS().name[language]}
               </h1>
 
               <h1 className="text-center md:text-left text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                {t('home.headline2')}
+                {t('home.headline')}
               </h1>
               
               <p className="text-center md:text-left text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">

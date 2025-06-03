@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { PROJECTS } from '../utils/data/consts/Projects.const';
 
 const ProjectDetail: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { id } = useParams<{ id: string }>();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
@@ -41,7 +41,7 @@ const ProjectDetail: React.FC = () => {
             {t('project.notFound')}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            {t('project.notFound.subTitle')}
+            {t('project.notFound.subtitle')}
           </p>
           <Link 
             to="/projects"
@@ -75,9 +75,19 @@ const ProjectDetail: React.FC = () => {
             {project.title}
           </h1>
         </div>
+            <div className="prose prose-lg dark:prose-invert max-w-none">
+              <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
+                {t('project.detail.description')}
+              </h2>
+              <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
+                {project.fullDescription[language]?.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
         
         {/* Project Image Slider */}
-        <div className="mb-12 relative">
+        <div className="my-12 relative">
           <div className="rounded-lg overflow-hidden h-[300px] md:h-[400px] lg:h-[500px] bg-gray-100 dark:bg-gray-800">
             <img 
               src={project.images[currentImageIndex]} 
@@ -125,49 +135,15 @@ const ProjectDetail: React.FC = () => {
         </div>
         
         {/* Project Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Main Content */}
           <div className="lg:col-span-2">
+          
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
-                {t('project.description')}
+                {t('project.detail.technologies')}
               </h2>
-              <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
-                {project.fullDescription.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="prose prose-lg dark:prose-invert max-w-none pt-5">
-              <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
-                {t('project.responsibilities')}
-              </h2>
-              <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
-                {project.responsibility.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            {project.achievements && (
-              <div className="prose prose-lg dark:prose-invert max-w-none pt-5">
-                <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
-                  {t('project.achievements')}
-                </h2>
-                <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
-                  {project.achievements.map((item,index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          
-            <div className="prose prose-lg dark:prose-invert max-w-none pt-5">
-              <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
-                {t('project.technologies')}
-              </h2>
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
@@ -178,10 +154,32 @@ const ProjectDetail: React.FC = () => {
                 ))}
               </div>
             </div>
+
+            <div className="prose prose-lg dark:prose-invert max-w-none pt-5">
+              <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
+                {t('project.detail.responsibilities')}
+              </h2>
+              <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
+                {project.responsibility[language]?.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="prose prose-lg dark:prose-invert max-w-none pt-5">
+              <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
+                {t('project.detail.achievements')}
+              </h2>
+              <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
+                {project.achievements[language]?.map((item,index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
           
           {/* Sidebar */}
-          <div>
+          <div className="order-first md:order-last">
             <div className="bg-gray-200 dark:bg-gray-800 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 {t('project.details')}
@@ -190,7 +188,7 @@ const ProjectDetail: React.FC = () => {
               <div className="space-y-6">
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                    {t('project.type')}
+                    {t('project.detail.type')}
                   </h4>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.projectTypes.map(item => (
@@ -208,7 +206,7 @@ const ProjectDetail: React.FC = () => {
                   <div>
                     <div className='pb-5'>
                       <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                        {t('project.companyName')}
+                        {t('project.detail.companyName')}
                       </h4>
                       <p className="text-gray-900 dark:text-white">
                         {project.companyName}
@@ -217,16 +215,16 @@ const ProjectDetail: React.FC = () => {
 
                     <div className='pb-5'>
                       <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                        {t('project.teamsize')}
+                        {t('project.detail.teamsize')}
                       </h4>
                       <p className="text-gray-900 dark:text-white">
-                        {t('project.teamMembers', {'{0}': project.teamsize.toString()})}
+                        {t('project.detail.teamMembers', {'{0}': project.teamsize.toString()})}
                       </p>
                     </div>
                     
                     <div>
                       <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                        {t('project.role')}
+                        {t('project.detail.role')}
                       </h4>
                       <p className="text-gray-900 dark:text-white">
                         {project.role}
@@ -236,7 +234,7 @@ const ProjectDetail: React.FC = () => {
                   <div>
                     <div className='pb-5'>
                       <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                        {t('project.fromDate')}
+                        {t('project.detail.fromDate')}
                       </h4>
                       <p className="text-gray-900 dark:text-white">
                         {project.fromDate}
@@ -244,7 +242,7 @@ const ProjectDetail: React.FC = () => {
                     </div>
                     <div className='pb-5'>
                       <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                        {t('project.toDate')}
+                        {t('project.detail.toDate')}
                       </h4>
                       <p className="text-gray-900 dark:text-white">
                         {project.toDate}
@@ -252,7 +250,7 @@ const ProjectDetail: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                        {t('project.methodology')}
+                        {t('project.detail.methodology')}
                       </h4>
                       <p className="text-gray-900 dark:text-white">
                         {project.methodology}
@@ -264,7 +262,7 @@ const ProjectDetail: React.FC = () => {
                 {project.demoUrl && project.repoUrl && (
                   <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
-                      {t('project.links')}
+                      {t('project.detail.links')}
                     </h4>
                     
                     <div className="space-y-2">

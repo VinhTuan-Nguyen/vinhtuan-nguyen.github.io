@@ -1,11 +1,11 @@
 import { Category } from "../Types";
+import { IFTranslation } from "./IFTranslation";
 
 export interface IFProject {
   id: string;
   title: string;
   featured: boolean;
   shortDescription: string
-  fullDescription: string[];
   thumbnail: string;
   images: string[];
   projectTypes: string[];
@@ -15,10 +15,11 @@ export interface IFProject {
   fromDate: string;
   toDate: string;
   role: string;
-  responsibility: string[];
-  achievements?: string[];
+  methodology: string;
+  fullDescription: IFTranslation;
+  responsibility: IFTranslation;
+  achievements: IFTranslation;
   companyName?: string;
   demoUrl?: string;
   repoUrl?: string;
-  methodology: string
 }

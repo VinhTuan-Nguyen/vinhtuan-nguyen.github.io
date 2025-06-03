@@ -6,7 +6,7 @@ import { CONTACTS } from '../utils/data/consts/Contacts.const';
 import { PAGE_LINKS } from '../utils/data/consts/PageLinks.const';
 
 const Footer: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
   
   return (
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
         {/* Top section with logo and nav links */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <Link to="/" className="text-xl font-bold mb-4 md:mb-0 text-gray-900 dark:text-white">
-            {t('home.headline1')}
+            {CONTACTS().name[language]}
           </Link>
           
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">

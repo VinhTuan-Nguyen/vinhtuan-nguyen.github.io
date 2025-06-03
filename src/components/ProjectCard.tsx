@@ -29,9 +29,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       
       {/* Project Info */}
       <div className="p-5">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
           {project.title}
         </h3>
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 font-semibold">
+          {"("+project.fromDate+" - "+project.toDate+")"}
+        </p>
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
           {project.shortDescription}
         </p>

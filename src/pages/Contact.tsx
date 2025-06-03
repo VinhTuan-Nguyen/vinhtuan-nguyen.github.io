@@ -5,7 +5,7 @@ import { CONTACTS } from '../utils/data/consts/Contacts.const';
 import ContactForm from '../components/ContactForm';
 
 const Contact: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <div className="min-h-screen pt-24 pb-16">
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
                       {t('contact.form.location')}
                     </h4>
                     <p className="text-gray-900 dark:text-white">
-                      {CONTACTS().location}
+                      {CONTACTS().location[language]}
                     </p>
                   </div>
                 </div>
@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
                       {t('contact.form.phone')}
                     </h4>
                     <p className="text-gray-900 dark:text-white">
-                      {CONTACTS().phone}
+                      {CONTACTS().phone[language]}
                     </p>
                   </div>
                 </div>
@@ -107,13 +107,6 @@ const Contact: React.FC = () => {
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="h-5 w-5" />
-                  </a>
-                  <a 
-                    href={`mailto:${CONTACTS().email}`}
-                    className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
-                    aria-label="Email"
-                  >
-                    <Mail className="h-5 w-5" />
                   </a>
                 </div>
               </div>
