@@ -93,7 +93,7 @@ export const PROJECTS: IFProject[] = [
   {
     id: 'PETMULESOFT',
     title: 'Petronas - Mulesoft',
-    thumbnail: '/assets/images/mulesoft-logo.png',
+    thumbnail: '/assets/images/petronas-logo.png',
     companyName: 'FPT Software',
     fromDate: 'Sep/2022',
     toDate: 'Apr/2024',
@@ -112,8 +112,8 @@ export const PROJECTS: IFProject[] = [
       vi: []
     },
     images: [
-      '/assets/images/mulesoft-logo.png',
       '/assets/images/petronas-logo.png',
+      '/assets/images/mulesoft-logo.png',
       '/assets/images/mulesoft-api-led.png',
     ],
     categories: ['api', 'microservices'],
@@ -183,7 +183,7 @@ export const PROJECTS: IFProject[] = [
   {
     id: 'MYPORTFOLIO',
     title: 'My Portfolio',
-    thumbnail: '/assets/images/mulesoft-logo.png',
+    thumbnail: '/assets/images/react&tailwind-logo.jpg',
     companyName: 'N/A',
     fromDate: 'Jun/2025',
     toDate: 'Jul/2025',
@@ -193,9 +193,9 @@ export const PROJECTS: IFProject[] = [
     featured: true,
     role: 'Full-Stack Engineer',
     images: [
-      '/assets/images/mulesoft-logo.png',
-      '/assets/images/petronas-logo.png',
-      '/assets/images/mulesoft-api-led.png',
+      '/assets/images/react&tailwind-logo.jpg',
+      '/assets/images/react-logo.png',
+      '/assets/images/tailwind-css-logo.jpg',
     ],
     categories: ['web', 'design'],
     technologies: ['React', 'Tailwin CSS', 'Typescript / Javascript'],
