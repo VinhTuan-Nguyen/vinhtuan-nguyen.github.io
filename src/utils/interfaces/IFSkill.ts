@@ -1,5 +1,6 @@
+import { IFTranslation } from "./IFTranslation";
 
 export interface IFSkill {
-  category: string;
+  category: IFTranslation;
   items: string[];
 }

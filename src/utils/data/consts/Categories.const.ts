@@ -1,7 +1,7 @@
 import { useLanguage } from "../../../contexts/LanguageContext";
-import { CategoryAll } from "../../Types";
+import { IFCategory } from "../../interfaces/IFCategory";
 
-export const CATEGORIES = (): { value: CategoryAll; label: string }[] => {
+export const CATEGORIES = (): IFCategory[] => {
   const { t } = useLanguage();
   return [
     { value: 'all', label: t('project.filter.all') },

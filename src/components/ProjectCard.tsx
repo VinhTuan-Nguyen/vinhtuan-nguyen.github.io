@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { IFProject } from '../utils/interfaces/IFProject';
+import { ConvertDate } from '../utils/helper/ConvertDate';
 
 interface ProjectCardProps {
   project: IFProject;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
@@ -33,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.title}
         </h3>
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 font-semibold">
-          {"("+project.fromDate+" - "+project.toDate+")"}
+          {"("+[ConvertDate(project.fromDate, language), ConvertDate(project.toDate, language)].join(' - ')+")"}
         </p>
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
           {project.shortDescription}

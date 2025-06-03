@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { PROJECTS } from '../utils/data/consts/Projects.const';
+import { ConvertDate } from '../utils/helper/ConvertDate';
 
 const ProjectDetail: React.FC = () => {
   const { t, language } = useLanguage();
@@ -237,7 +238,7 @@ const ProjectDetail: React.FC = () => {
                         {t('project.detail.fromDate')}
                       </h4>
                       <p className="text-gray-900 dark:text-white">
-                        {project.fromDate}
+                        {ConvertDate(project.fromDate, language)}
                       </p>
                     </div>
                     <div className='pb-5'>
@@ -245,7 +246,7 @@ const ProjectDetail: React.FC = () => {
                         {t('project.detail.toDate')}
                       </h4>
                       <p className="text-gray-900 dark:text-white">
-                        {project.toDate}
+                        {ConvertDate(project.toDate, language)}
                       </p>
                     </div>
                     <div>
