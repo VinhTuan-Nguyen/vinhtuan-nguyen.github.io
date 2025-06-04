@@ -11,3 +11,7 @@ export type Category = 'web'
     | 'microservices'
 
 export type CategoryAll = 'all' | Category
+
+export type FormStatus = null | 'success' | 'error'
+
+export type ProcessStatus = 'start' | 'end'

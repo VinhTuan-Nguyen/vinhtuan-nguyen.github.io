@@ -76,6 +76,8 @@
   "contact.form.location": "Location:",
   "contact.form.phone": "Phone:",
   "contact.direct": "Or reach me directly:",
+  "contact.message.success": "Your message has been sent successfully. I'll get back to you as soon as possible!",
+  "contact.message.error": "There was a problem sending your message. Please try again later.",
   "footer____________________": "________________________________________________________START",
   "footer.copyright": "Copyright © 2025 | All Rights Reserved",
   "social____________________": "________________________________________________________START",

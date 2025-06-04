@@ -77,6 +77,8 @@
   "contact.form.location": "Địa Chỉ:",
   "contact.form.phone": "Số Điện Thoại:",
   "contact.direct": "Hoặc liên hệ trực tiếp:",
+  "contact.message.success": "Tin nhắn của bạn đã được gửi thành công. Mình sẽ phản hồi bạn sớm nhất có thể!",
+  "contact.message.error": "Đã xảy ra sự cố khi gửi tin nhắn của bạn. Vui lòng thử lại sau.",
   "footer____________________": "________________________________________________________START",
   "footer.copyright": "Copyright © 2025 | All Rights Reserved",
   "social____________________": "________________________________________________________START",
