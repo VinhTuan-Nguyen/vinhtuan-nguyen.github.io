@@ -5,7 +5,7 @@ export interface IFProject {
   id: string;
   title: string;
   featured: boolean;
-  shortDescription: string
+  shortDescription: IFTranslation
   thumbnail: string;
   images: string[];
   projectTypes: string[];

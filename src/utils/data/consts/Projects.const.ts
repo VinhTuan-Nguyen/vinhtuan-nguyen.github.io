@@ -2,10 +2,69 @@ import { IFProject } from "../../interfaces/IFProject";
 
 export const PROJECTS: IFProject[] = [
   {
+    id: 'MYPORTFOLIO',
+    title: 'My Portfolio',
+    thumbnail: '/assets/images/my-portfolio.png',
+    companyName: 'N/A',
+    fromDate: 'Jun/2025',
+    toDate: 'Jul/2025',
+    teamsize: 1,
+    methodology: 'N/A',
+    shortDescription: {
+      en: [
+        "This is a personal project I'm truly proud of, having handled everything from ideation and web design to source code implementation and CI/CD myself."
+      ],
+      vi: [
+        "Đây là một dự án cá nhân mà mình thực sự tự hào khi tự bản thân xử lý mọi thứ từ khâu lên ý tưởng, thiết kế web đến triển khai mã nguồn và CI/CD."
+      ]
+    },
+    featured: true,
+    role: 'Full-Stack',
+    images: [
+      '/assets/images/my-portfolio.png',
+      '/assets/images/react&tailwind-logo.jpg',
+    ],
+    categories: ['web', 'design'],
+    technologies: ['React', 'Tailwin CSS', 'Vercel', 'Github Pages', 'Typescript / Javascript'],
+    projectTypes: ['Web Development', 'Personal Project', 'SPA'],
+    fullDescription: {
+      en: ["N/A"],
+      vi: ["N/A"]
+    },
+    responsibility: {
+      en: [
+        "Ideating the overall website layout.",
+        "Implementing the idea using a React app and GitHub Pages.",
+        "Setting up CI/CD with GitHub Actions to automate the deployment process to GitHub Pages.",
+        "Building a small Back-end service to handle email sending."
+      ],
+      vi: [
+        "Lên ý tưởng bố cục cho toàn trang web",
+        "Triển khai ý tưởng bằng React app và Github Pages",
+        "triển khai CI/CD với Github Actions để tự động quy trình deploy lên Github Pages",
+        "Xây dựng một Back-end service nho nhỏ để thực hiện tác vụ send mail"
+      ]
+    },
+    achievements: {
+      en: [
+        "The project's greatest achievement is your experience with the website!"
+      ],
+      vi: [
+        "Thành tựu lớn nhất của dự án này chính là sự trải nghiệm của bạn với trang web!."]
+    },
+  },
+  {
     id: 'ONP25',
     title: 'ORION New Price',
     methodology: 'Scrum/Agile',
-    shortDescription: "A module to oversee pricing across ORION's ecosystem, encompassing both its domestic and international member companies.",
+    shortDescription: {
+      en: [
+        "A module to oversee \"Picing\" across SONY's ecosystem, encompassing both its domestic and international member companies.",
+      ],
+      vi: [
+        "Đây là 1 module giám sát \"Giá\" trên toàn hệ sinh thái SONY, bao gồm cả các công ty thành viên trong nước và quốc tế."
+      ]
+    },
     fullDescription: {
       en: [
         "Development web application follows request of customer.",
@@ -20,7 +79,7 @@ export const PROJECTS: IFProject[] = [
       '/assets/images/d365-slider-2.jpg',
     ],
     categories: ['web', 'd365', 'crm'],
-    technologies: ['.Net Framework', 'X++', 'SQL', 'Dynamics 365 Finance & Operations'],
+    technologies: ['Microsoft D365 F&O', 'X++', 'SQL', '.Net Framework'],
     teamsize: 5,
     featured: true,
     fromDate: 'Jan/2025',
@@ -58,7 +117,14 @@ export const PROJECTS: IFProject[] = [
     toDate: 'Oct/2024',
     teamsize: 15,
     methodology: 'Waterfall',
-    shortDescription: "N/A",
+    shortDescription: {
+      en: [
+        "This module handles ANA Airlines' Booking functionality. Allowing users to check, register, and pay for in-flight services post-ticket booking.",
+      ],
+      vi: [
+        "Module này xử lý chức năng \"Đặt Vé\" của ANA airline. Nó cho phép người dùng kiểm tra, đăng ký và thanh toán các dịch vụ trên chuyến bay đó sau khi đặt vé."
+      ]
+    },
     featured: false,
     role: 'Front-end Developer',
     fullDescription: {
@@ -99,7 +165,14 @@ export const PROJECTS: IFProject[] = [
     toDate: 'Apr/2024',
     teamsize: 15,
     methodology: 'Scrum/Agile',
-    shortDescription: "N/A",
+    shortDescription: {
+      en: [
+        "It serves as an intermediary, linking the main system with third-party platforms. It transforms data, unifying disparate systems into a single, cohesive flow."
+      ],
+      vi: [
+        "Nó đóng vai trò là trung gian, liên kết hệ thống chính với các bên thứ ba. Chuyển đổi dữ liệu, hợp nhất các hệ thống riêng biệt thành một luồng thống nhất."
+      ]
+    },
     featured: true,
     role: 'Low-code Developer',
     fullDescription: {
@@ -147,7 +220,14 @@ export const PROJECTS: IFProject[] = [
     toDate: 'Sep/2022',
     teamsize: 6,
     methodology: 'N/A',
-    shortDescription: "N/A",
+    shortDescription: {
+      en: [
+        "Just beginning my journey to become a Full-Stack Developer, both challenges and new opportunities are already expanding."
+      ],
+      vi: [
+        "Chập chững bước vào con đường trở thành Full-Stack Developer, những thách thức cũng như các cơ hội mới bắt đầu mở rộng."
+      ]
+    },
     featured: false,
     role: 'Low-code Developer',
     fullDescription: {
@@ -179,38 +259,5 @@ export const PROJECTS: IFProject[] = [
       vi: []
     },
     projectTypes: ['Restful API', 'Micro service', 'Middleware', 'Integration', 'Data Trasforming']
-  },
-  {
-    id: 'MYPORTFOLIO',
-    title: 'My Portfolio',
-    thumbnail: '/assets/images/react&tailwind-logo.jpg',
-    companyName: 'N/A',
-    fromDate: 'Jun/2025',
-    toDate: 'Jul/2025',
-    teamsize: 1,
-    methodology: 'N/A',
-    shortDescription: "N/A",
-    featured: true,
-    role: 'Full-Stack Engineer',
-    images: [
-      '/assets/images/react&tailwind-logo.jpg',
-      '/assets/images/react-logo.png',
-      '/assets/images/tailwind-css-logo.jpg',
-    ],
-    categories: ['web', 'design'],
-    technologies: ['React', 'Tailwin CSS', 'Typescript / Javascript'],
-    projectTypes: ['Web Development', 'Personal Project', 'SPA'],
-    fullDescription: {
-      en: [],
-      vi: []
-    },
-    responsibility: {
-      en: [],
-      vi: []
-    },
-    achievements: {
-      en: [],
-      vi: []
-    },
   }
 ];

@@ -37,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {"("+[ConvertDate(project.fromDate, language), ConvertDate(project.toDate, language)].join(' - ')+")"}
         </p>
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-          {project.shortDescription}
+          {project.shortDescription[language]}
         </p>
         
         {/* Tags/Technologies */}

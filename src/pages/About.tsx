@@ -20,10 +20,10 @@ const About: React.FC = () => {
         </div>
         
         {/* About Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {/* Profile Image */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-32">
+          <div className="col-span-1">
+            <div className="sticky top-24">
               <div className="relative mx-auto max-w-sm">
                 <div className="rounded-lg overflow-hidden shadow-lg border-4 border-white dark:border-gray-800">
                   <img 
@@ -70,7 +70,7 @@ const About: React.FC = () => {
           </div>
           
           {/* Main Content */}
-          <div className="lg:col-span-2">
+          <div className="md:col-span-1 lg:col-span-2">
             {/* My Story */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
@@ -139,14 +139,15 @@ const About: React.FC = () => {
                       <p className="text-blue-600 dark:text-blue-400">
                         {item.universityName[language]}
                       </p>
+                      <p className="text-gray-600 dark:text-gray-400">GPA: {item.gpa}</p>
                     </div>
                     <p className="text-gray-600 dark:text-gray-400 mt-2 md:mt-0">
                       {[item.fromDate, item.toDate].join(' - ')}
                     </p>
                   </div>
-                    {item.achievements[language]?.map(item => (
-                      <p className="text-gray-700 dark:text-gray-300">{item}</p>
-                    ))}
+                  {item.achievements[language]?.map(item => (
+                    <p className="text-gray-700 dark:text-gray-300">{item}</p>
+                  ))}
                 </div>
               ))}
             </section>
