@@ -158,7 +158,7 @@ export const PROJECTS: IFProject[] = [
   },
   {
     id: 'PETMULESOFT',
-    title: 'Petronas - Mulesoft',
+    title: 'PET - Mulesoft',
     thumbnail: '/assets/images/petronas-logo.png',
     companyName: 'FPT Software',
     fromDate: 'Sep/2022',
