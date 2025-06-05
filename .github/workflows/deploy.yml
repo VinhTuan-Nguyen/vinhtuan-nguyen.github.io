@@ -40,7 +40,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Build
+      - name: Vite Build
+        env:
+          VITE_SEND_MAIL_API: ${{ secrets.VITE_SEND_MAIL_API }}
         run: npm run build
         
       - name: Setup Pages
