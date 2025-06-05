@@ -42,6 +42,8 @@ jobs:
         
       - name: Vite Build
         run: npm run build
+        env:
+          VITE_SEND_MAIL_API:  ${{ secrets.VITE_SEND_MAIL_API }}
         
       - name: Setup Pages
         uses: actions/configure-pages@v5
