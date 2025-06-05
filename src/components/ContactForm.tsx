@@ -29,7 +29,7 @@ const ContactForm: React.FC = () => {
       setFormStatus(null)
       setProcessStatus('start')
 
-      await fetch(`https://send-mail-umber-six.vercel.app/send-mail`, {
+      await fetch(`${import.meta.env.VITE_SEND_MAIL_API}/send-mail`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

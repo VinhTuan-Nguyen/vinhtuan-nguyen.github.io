@@ -1,11 +1,12 @@
 {
-  "homepage": "https://vinhtuan-nguyen.github.io/portfolio",
+  "homepage": "https://vinhtuan-nguyen.github.io",
   "name": "professional-portfolio",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:prod": "vite --mode prod",
     "preview": "vite preview",
     "build": "vite build",
     "deploy": "gh-pages -d dist",
