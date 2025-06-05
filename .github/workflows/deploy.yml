@@ -24,7 +24,7 @@ jobs:
   # Single deploy job since we're just deploying
   deploy:
     environment:
-      name: github-pages
+      name: portfolio
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
@@ -42,8 +42,6 @@ jobs:
         
       - name: Vite Build
         run: npm run build
-        env:
-          VITE_SEND_MAIL_API: ${{ secrets.VITE_SEND_MAIL_API }}
         
       - name: Setup Pages
         uses: actions/configure-pages@v5
