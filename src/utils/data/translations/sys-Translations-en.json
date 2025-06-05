@@ -36,6 +36,7 @@
   "project.detail.methodology": "Methodology:",
   "project.detail.teamMembers": "{0} members",
   "project.detail.links": "Links",
+  "project.detail.articles": "Articles",
   "project.detail.technologies": "Technologies",
   "project.filter.all": "All",
   "project.filter.none": "No projects found in this category. Please check back later!",

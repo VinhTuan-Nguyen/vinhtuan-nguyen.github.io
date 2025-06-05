@@ -15,7 +15,15 @@ export const PROJECTS: IFProject[] = [
         "This is a personal project I'm truly proud of, having handled everything from ideation and web design to source code implementation and CI/CD myself."
       ],
       vi: [
-        "Đây là một dự án cá nhân mà mình thực sự tự hào khi tự bản thân xử lý mọi thứ từ khâu lên ý tưởng, thiết kế web đến triển khai mã nguồn và CI/CD."
+        "Đây là một dự án cá nhân mà mình thực sự tự hào khi tự bản thân xử lý tất cả mọi thứ từ khâu lên ý tưởng, thiết kế web đến triển khai mã nguồn và CI/CD."
+      ]
+    },
+    fullDescription: {
+      en: [
+        "This is a personal project I'm truly proud of, having handled everything from ideation and web design to source code implementation and CI/CD myself."
+      ],
+      vi: [
+        "Đây là một dự án cá nhân mà mình thực sự tự hào khi tự bản thân xử lý tất cả mọi thứ từ khâu lên ý tưởng, thiết kế web đến triển khai mã nguồn và CI/CD."
       ]
     },
     featured: true,
@@ -27,10 +35,6 @@ export const PROJECTS: IFProject[] = [
     categories: ['web', 'design'],
     technologies: ['React', 'Tailwin CSS', 'Vercel', 'Github Pages', 'Typescript / Javascript'],
     projectTypes: ['Web Development', 'Personal Project', 'SPA'],
-    fullDescription: {
-      en: ["N/A"],
-      vi: ["N/A"]
-    },
     responsibility: {
       en: [
         "Ideating the overall website layout.",
@@ -50,12 +54,14 @@ export const PROJECTS: IFProject[] = [
         "The project's greatest achievement is your experience with the website!"
       ],
       vi: [
-        "Thành tựu lớn nhất của dự án này chính là sự trải nghiệm của bạn với trang web!."]
+        "Thành tựu lớn nhất của dự án này chính là sự trải nghiệm của bạn với trang web này!."]
     },
+    repoUrl: 'https://github.com/VinhTuan-Nguyen/vinhtuan-nguyen.github.io'
   },
   {
     id: 'ONP25',
     title: 'ORION New Price',
+    companyName: 'FPT Software',
     methodology: 'Scrum/Agile',
     shortDescription: {
       en: [
@@ -68,9 +74,12 @@ export const PROJECTS: IFProject[] = [
     fullDescription: {
       en: [
         "Development web application follows request of customer.",
-        "Using X++ (.Net Framework) to build excel upload function, allowing to import into database up to 10k records at the same time."
+        "Using X++ (.Net Framework) to build excel upload function, allowing to insert into database up to 10k records at the same time."
       ],
-      vi: []
+      vi: [
+        "Phát triển ứng dụng web theo yêu cầu của khách hàng.",
+        "Sử dụng X++ (.Net Framework) để xây dựng chức năng upload excel, cho phép insert vào cơ sở dữ liệu lên đến 10,000 records cùng một lúc."
+      ]
     },
     thumbnail: '/assets/images/D365-Logo.png',
     images: [
@@ -86,27 +95,47 @@ export const PROJECTS: IFProject[] = [
     toDate: 'May/2025',
     responsibility: {
       en: [
-        "Worked as an official Low-code Developer at company",
-        "Creating Flowchart Diagram based on Function Detail Design (FDD)",
-        "Implement the features according to the Flow chart and FDD",
+        "Worked as an official Low-code Developer at the company",
+        "Creating a Flowchart Diagram based on Function Detail Design (FDD)",
+        "Implement the features according to the Flowchart and FDD",
         "Creating test case scenarios & executing unit tests.",
         "Perform integration tests based on available scenarios.",
         "Coding, fixing bugs, resolving problems.",
       ],
-      vi: []
+      vi: [
+        "Làm việc với vai trò chính là Low-code Developer tại công ty,",
+        "Tạo Flowchart Diagram dựa trên Function Detail Design (FDD).",
+        "Triển khai các tính năng Flowchart và FDD",
+        "Tạo các kịch bản test case & thực hiện các unit tests.",
+        "Thực hiện IT test dựa trên scenarios có sẵn.",
+        "Lập trình, sửa lỗi, giải quyết vấn đề."
+      ]
     },
     role: '.Net Developer',
     achievements: {
       en: [
         "Ensure monthly release schedule with customers.",
         "Completed all client requirements & released product 2 weeks ahead of schedule.",
-        "Received praise and an honourable award from the director and the client for completing the project with the best quality"
+        "Received praise and an honourable award from the director and the client for completing the project with the best quality",
+        "Made a significant impact within FPT Corporation",
+        "Praised and covered by several of the company's mass media"
       ],
-      vi: []
+      vi: [
+        "Đảm bảo lịch phát hành hàng tháng với khách hàng.",
+        "Hoàn thành tất cả các yêu cầu của khách hàng và release sản phẩm sớm hơn 2 tuần so với lịch trình.",
+        "Nhận được lời khen ngợi và một giải thưởng danh dự từ giám đốc và khách hàng vì đã hoàn thành dự án với chất lượng tốt nhất.",
+        "Có tác động đáng kể trong Tập đoàn FPT",
+        "Được nhiều kênh thông tin đại chúng của công ty ca ngợi và đưa tin.",
+      ]
     },
-    companyName: 'FPT Software',
-    projectTypes: ['Web Development', 'CRM', 'D365 F&O', 'Unit Test', 'SIT', 'Flowchart Design']
-
+    projectTypes: ['Web Development', 'CRM', 'D365 F&O', 'Unit Test', 'SIT', 'Flowchart Design'],
+    articles: [{
+      title: {
+        en: ['FPT SOFTWARE CAN THO IMPRESSES CUSTOMERS WITH DYNAMICS 365 SOLUTION'],
+        vi: ['NHÀ PHẦN MỀM FPT CẦN THƠ GÂY ẤN TƯỢNG VỚI KHÁCH HÀNG BẰNG GIẢI PHÁP DYNAMICS 365']
+      },
+      url: 'https://www.facebook.com/share/p/19DCQb1Q3J/'
+    }]
   },
   {
     id: 'UIUXS2',
@@ -129,9 +158,13 @@ export const PROJECTS: IFProject[] = [
     role: 'Front-end Developer',
     fullDescription: {
       en: [
-        "This project develops a website to handle all functionalities that end-users can interact with, for one of the largest airline systems in Japan."
+        "This project develops a website to handle all functionalities that end-users can interact with, for one of the largest airline systems in Japan.",
+        "Develop multi-language functionality, improve Front-end performance with a Pub-Sub mechanism.",
       ],
-      vi: []
+      vi: [
+        "Dự án này phát triển một trang web có thể xử lý mọi chức năng mà end-users có thể tương tác cho một hãng hàng không lớn nhất Nhật Bản.",
+        "Xây dựng chức năng đa ngôn ngữ, cải tiến hiệu suất Front-end với cơ chế Pub-Sub"
+      ]
     },
     images: [
       '/assets/images/ana-logo.jpg',
@@ -146,13 +179,20 @@ export const PROJECTS: IFProject[] = [
         "Analysis requirement and find out solutions and then present the idea to team members.",
         "Coding, fixing bugs, resolving problems."
       ],
-      vi: []
+      vi: [
+        "Đã làm việc với vai trò chính là Front-end Developer tại công ty.",
+        "Trao đổi với BA (Business Analyst) và đội ngũ onsite (Nhật Bản) để làm rõ các yêu cầu.",
+        "Phân tích yêu cầu, tìm ra các giải pháp và sau đó trình bày ý tưởng cho các thành viên trong nhóm.",
+        "Lập trình, sửa lỗi, giải quyết vấn đề."
+      ]
     },
     achievements: {
       en: [
-        "4 consecutive months of receiving MSC type A rating"
+        "Frequently nominated as the most efficient employee of the month."
       ],
-      vi: []
+      vi: [
+        "Thường xuyên được đề cử là nhân viên làm việc hiệu quả nhất trong tháng."
+      ]
     },
     projectTypes: ['Web Development', 'Front-end', 'Unit Test',]
   },

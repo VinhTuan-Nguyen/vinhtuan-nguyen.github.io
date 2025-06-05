@@ -11,7 +11,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { t, language } = useLanguage();
-  
+
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
       {/* Project Image */}
@@ -22,24 +22,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
         />
         {project.featured && (
-          <div className="absolute top-3 right-3 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
-            {t('project.featured')}
+          <div className="absolute top-3 right-3 bg-blue-600 dark:bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
+            🔥<strong>{t('project.featured')}</strong>
           </div>
         )}
       </div>
-      
+
       {/* Project Info */}
       <div className="p-5">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
           {project.title}
         </h3>
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 font-semibold">
-          {"("+[ConvertDate(project.fromDate, language), ConvertDate(project.toDate, language)].join(' - ')+")"}
+          ({[ConvertDate(project.fromDate, language), ConvertDate(project.toDate, language)].join(' - ')})
         </p>
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
           {project.shortDescription[language]}
         </p>
-        
+
         {/* Tags/Technologies */}
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.slice(0, 3).map((tech, index) => (
@@ -52,11 +52,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           ))}
           {project.technologies.length > 3 && (
             <span className="inline-block bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded-full">
-              {t('project.more', {"{0}": (project.technologies.length - 3).toString()})}
+              {t('project.more', { "{0}": (project.technologies.length - 3).toString() })}
             </span>
           )}
         </div>
-        
+
         {/* Buttons */}
         <div className="flex flex-wrap gap-3">
           <Link
@@ -65,7 +65,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           >
             {t('project.viewDetails')}
           </Link>
-          
+
           {project.demoUrl && (
             <a
               href={project.demoUrl}
@@ -77,7 +77,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               {t('project.liveDemo')}
             </a>
           )}
-          
+
           {project.repoUrl && (
             <a
               href={project.repoUrl}

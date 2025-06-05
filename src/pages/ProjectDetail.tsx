@@ -9,26 +9,26 @@ const ProjectDetail: React.FC = () => {
   const { t, language } = useLanguage();
   const { id } = useParams<{ id: string }>();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   // Find the project based on the ID
   const project = PROJECTS.find(p => p.id === id);
-  
+
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
-  
+
   // Image slider controls
   const goToPreviousImage = () => {
     if (!project) return;
-    setCurrentImageIndex(prevIndex => 
+    setCurrentImageIndex(prevIndex =>
       prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
     );
   };
-  
+
   const goToNextImage = () => {
     if (!project) return;
-    setCurrentImageIndex(prevIndex => 
+    setCurrentImageIndex(prevIndex =>
       prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
     );
   };
@@ -44,7 +44,7 @@ const ProjectDetail: React.FC = () => {
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             {t('project.notFound.subtitle')}
           </p>
-          <Link 
+          <Link
             to="/projects"
             className="inline-flex items-center font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
           >
@@ -55,13 +55,13 @@ const ProjectDetail: React.FC = () => {
       </div>
     );
   }
-  
+
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container mx-auto px-4 md:px-6">
         {/* Back Button */}
         <div className="mb-8">
-          <Link 
+          <Link
             to="/projects"
             className="inline-flex items-center font-medium text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
           >
@@ -69,64 +69,63 @@ const ProjectDetail: React.FC = () => {
             {t('project.backLink')}
           </Link>
         </div>
-        
+
         {/* Project Header */}
         <div className="mb-10">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {project.title}
           </h1>
         </div>
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
-                {t('project.detail.description')}
-              </h2>
-              <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
-                {project.fullDescription[language]?.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </div>
-        
+        <div className="prose prose-lg dark:prose-invert max-w-none">
+          <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
+            {t('project.detail.description')}
+          </h2>
+          <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
+            {project.fullDescription[language]?.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
         {/* Project Image Slider */}
         <div className="my-12 relative">
           <div className="rounded-lg overflow-hidden h-[300px] md:h-[400px] lg:h-[500px] bg-gray-100 dark:bg-gray-800">
-            <img 
-              src={project.images[currentImageIndex]} 
-              alt={`${project.title} screenshot ${currentImageIndex + 1}`} 
+            <img
+              src={project.images[currentImageIndex]}
+              alt={`${project.title} screenshot ${currentImageIndex + 1}`}
               className="w-full h-full object-cover object-center"
             />
           </div>
-          
+
           {/* Slider Navigation */}
           {project.images.length > 1 && (
             <>
-              <button 
+              <button
                 onClick={goToPreviousImage}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="h-6 w-6" />
               </button>
-              
-              <button 
+
+              <button
                 onClick={goToNextImage}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
                 aria-label="Next image"
               >
                 <ChevronRight className="h-6 w-6" />
               </button>
-              
+
               {/* Dots Indicator */}
               <div className="flex justify-center mt-4 space-x-2">
                 {project.images.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                      index === currentImageIndex
-                        ? 'bg-blue-600 dark:bg-blue-500'
-                        : 'bg-gray-300 dark:bg-gray-600'
-                    }`}
+                    className={`w-3 h-3 rounded-full transition-colors duration-300 ${index === currentImageIndex
+                      ? 'bg-blue-600 dark:bg-blue-500'
+                      : 'bg-gray-300 dark:bg-gray-600'
+                      }`}
                     aria-label={`Go to image ${index + 1}`}
                   />
                 ))}
@@ -134,12 +133,12 @@ const ProjectDetail: React.FC = () => {
             </>
           )}
         </div>
-        
+
         {/* Project Details */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Main Content */}
           <div className="lg:col-span-2">
-          
+
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2 className='text-xl font-semibold text-gray-900 dark:text-white mb-4'>
                 {t('project.detail.technologies')}
@@ -172,20 +171,20 @@ const ProjectDetail: React.FC = () => {
                 {t('project.detail.achievements')}
               </h2>
               <ul className="space-y-4 text-gray-500 list-disc list-inside dark:text-gray-400">
-                {project.achievements[language]?.map((item,index) => (
+                {project.achievements[language]?.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
             </div>
           </div>
-          
+
           {/* Sidebar */}
           <div className="order-first md:order-last">
             <div className="bg-gray-200 dark:bg-gray-800 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 {t('project.details')}
               </h3>
-              
+
               <div className="space-y-6">
                 <div>
                   <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
@@ -199,7 +198,7 @@ const ProjectDetail: React.FC = () => {
                     ))}
                   </div>
                   <p className="text-gray-900 dark:text-white">
-                    
+
                   </p>
                 </div>
 
@@ -219,10 +218,10 @@ const ProjectDetail: React.FC = () => {
                         {t('project.detail.teamsize')}
                       </h4>
                       <p className="text-gray-900 dark:text-white">
-                        {t('project.detail.teamMembers', {'{0}': project.teamsize.toString()})}
+                        {t('project.detail.teamMembers', { '{0}': project.teamsize.toString() })}
                       </p>
                     </div>
-                    
+
                     <div>
                       <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
                         {t('project.detail.role')}
@@ -259,13 +258,13 @@ const ProjectDetail: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                
-                {project.demoUrl && project.repoUrl && (
+
+                {project.demoUrl || project.repoUrl && (
                   <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
                       {t('project.detail.links')}
                     </h4>
-                    
+
                     <div className="space-y-2">
                       {project.demoUrl && (
                         <a
@@ -278,7 +277,7 @@ const ProjectDetail: React.FC = () => {
                           {t('project.liveDemo')}
                         </a>
                       )}
-                      
+
                       {project.repoUrl && (
                         <a
                           href={project.repoUrl}
@@ -290,6 +289,27 @@ const ProjectDetail: React.FC = () => {
                           {t('project.sourceCode')}
                         </a>
                       )}
+                    </div>
+                  </div>
+                )}
+
+                {project.articles && (
+                  <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
+                      {t('project.detail.articles')}
+                    </h4>
+
+                    <div className="space-y-2">
+                      {project.articles.map(item => (
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        >
+                          {item.title[language]}
+                        </a>
+                      ))}
                     </div>
                   </div>
                 )}

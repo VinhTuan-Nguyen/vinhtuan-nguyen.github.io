@@ -1,4 +1,5 @@
 import { Category } from "../Types";
+import { Article } from "./IFArticle";
 import { IFTranslation } from "./IFTranslation";
 
 export interface IFProject {
@@ -22,4 +23,5 @@ export interface IFProject {
   companyName?: string;
   demoUrl?: string;
   repoUrl?: string;
+  articles?: Article[];
 }
