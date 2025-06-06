@@ -89,56 +89,45 @@ const ProjectDetail: React.FC = () => {
 
         {/* Project Image Slider */}
         <div className="my-12 relative overflow-hidden">
-          <div
-            className="h-[200px
-            ] md:h-[350px] lg:h-[500px] bg-white dark:bg-gray-900 transition-transform rounded-lg shadow-lg transition-transform duration-300 ease-in-out flex "
-            style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
-          >
-            {project.images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`${project.title} screenshot ${index + 1}`}
-                className={`w-full object-contain md:object-cover rounded-lg`}
-              />
-            ))}
+          <div className="h-[200px] md:h-[350px] lg:h-[500px] bg-white dark:bg-gray-900 rounded-lg shadow-lg flex">
+            <img
+              key={currentImageIndex}
+              src={project.images[currentImageIndex]}
+              alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+              className={`w-full object-contain md:object-cover rounded-lg`} />
           </div>
 
-          {/* Slider Navigation */}
           {project.images.length > 1 && (
-            <>
-              {/* Dots Indicator */}
-              <div className="flex justify-center items-center mt-2
+            <div className="flex justify-center items-center mt-2
                md:mt-4 space-x-3 md:space-x-4 lg:space-x-5 p-1">
-                <button
-                  onClick={goToPreviousImage}
-                  className="left-4 top-1/2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 p-1 md:p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
-                </button>
+              <button
+                onClick={goToPreviousImage}
+                className="left-4 top-1/2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 p-1 md:p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+              </button>
 
-                {project.images.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 md:w-4 md:h-4 md:w-5 md:h-5 rounded-full transition-colors duration-300 ${index === currentImageIndex
-                      ? 'bg-blue-600 dark:bg-blue-500'
-                      : 'bg-gray-300 dark:bg-gray-600'
-                      }`}
-                    aria-label={`Go to image ${index + 1}`}
-                  />
-                ))}
-
+              {project.images.map((_, index) => (
                 <button
-                  onClick={goToNextImage}
-                  className="right-4 top-1/2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 p-1 md:p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
-                </button>
-              </div>
-            </>
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`w-3 h-3 md:w-4 md:h-4 md:w-5 md:h-5 rounded-full transition-colors duration-300 ${index === currentImageIndex
+                    ? 'bg-blue-600 dark:bg-blue-500'
+                    : 'bg-gray-300 dark:bg-gray-600'
+                    }`}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
+
+              <button
+                onClick={goToNextImage}
+                className="right-4 top-1/2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 p-1 md:p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+                aria-label="Next image"
+              >
+                <ChevronRight className="h-4 w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+              </button>
+            </div>
           )}
         </div>
 

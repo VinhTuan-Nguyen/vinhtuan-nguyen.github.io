@@ -194,7 +194,7 @@ export const PROJECTS: IFProject[] = [
         "Thường xuyên được đề cử là nhân viên làm việc hiệu quả nhất trong tháng."
       ]
     },
-    projectTypes: ['Web Development', 'Front-end', 'Unit Test',]
+    projectTypes: ['Web Development', 'Front-end', 'Unit Test']
   },
   {
     id: 'PETMULESOFT',
@@ -222,7 +222,12 @@ export const PROJECTS: IFProject[] = [
         "Data Transforming.",
         "Collaborating with other third-party to integrate systems."
       ],
-      vi: []
+      vi: [
+        "Xử lý Batch Job.",
+        "Xử lý đơn hàng tự động.",
+        "Chuyển đổi dữ liệu.",
+        "Hợp tác với các bên thứ ba khác để tích hợp hệ thống."
+      ]
     },
     images: [
       '/assets/images/petronas-logo.png',
@@ -240,14 +245,24 @@ export const PROJECTS: IFProject[] = [
         "Creating test case scenarios & executing unit tests.",
         "Coding, fixing bugs, resolving problems."
       ],
-      vi: []
+      vi: [
+        "Làm việc với vai trò chính là Low-code Developer tại công ty.",
+        "Tạo Flowchart Diagram, Sequence Diagram, High Level Design Diagram.",
+        "Trao đổi với khách hàng để lấy và làm rõ các yêu cầu mới.",
+        "Triển khai các tính năng theo Flowchart Diagram.",
+        "Tạo các kịch bản kiểm thử & thực hiện unit tests.",
+        "Lập trình, sửa lỗi, giải quyết vấn đề."
+      ]
     },
     achievements: {
       en: [
         "Passed Mulesoft Developer Certified - Level 1.",
         "Passed Mulesoft Developer Certified - Level 2."
       ],
-      vi: []
+      vi: [
+        "Đạt chứng chỉ Mulesoft Developer - Level 1.",
+        "Đạt chứng chỉ Mulesoft Developer - Level 2."
+      ]
     },
     projectTypes: ['Restful API', 'Micro service', 'Middleware', 'Integration', 'Data Trasforming']
   },
@@ -275,7 +290,10 @@ export const PROJECTS: IFProject[] = [
         "Upgrade existing BE system.",
         "Verify data and then trigger the process to handle data transformed in the system."
       ],
-      vi: []
+      vi: [
+        "Nâng cấp hệ thống Backend đã có sẵn.",
+        "Xác minh dữ liệu và sau đó kích hoạt quy trình để xử lý dữ liệu đã chuyển đổi trong hệ thống."
+      ]
     },
     images: [
       '/assets/images/mulesoft-logo.png',
@@ -289,14 +307,21 @@ export const PROJECTS: IFProject[] = [
         "Communicate with clients to get and clarify new requirements.",
         "Coding, fixing bugs, resolving problems."
       ],
-      vi: []
+      vi: [
+        "Làm việc với vai trò chính là Junior Developer tại công ty.",
+        "Trao đổi với khách hàng để lấy và làm rõ các yêu cầu mới.",
+        "Lập trình, sửa lỗi, giải quyết vấn đề."
+      ]
     },
     achievements: {
       en: [
         "Improved problem solving and requirement management skills including change request.",
         "Improved coordination skills when working between clients and team member."
       ],
-      vi: []
+      vi: [
+        "Cải thiện kỹ năng giải quyết vấn đề và quản lý yêu cầu, bao gồm cả yêu cầu thay đổi.",
+        "Cải thiện kỹ năng phối hợp khi làm việc giữa khách hàng và các thành viên trong nhóm."
+      ]
     },
     projectTypes: ['Restful API', 'Micro service', 'Middleware', 'Integration', 'Data Trasforming']
   }
