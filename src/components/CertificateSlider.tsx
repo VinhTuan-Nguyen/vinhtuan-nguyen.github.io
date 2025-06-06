@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
-//import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import { IFCertificate } from '../utils/interfaces/IFCertificate';
 
 interface CertificateSliderProps {
@@ -8,7 +8,7 @@ interface CertificateSliderProps {
 }
 
 const CertificateSlider: React.FC<CertificateSliderProps> = ({ certificates }) => {
-  //const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const goToPrevious = () => {
@@ -28,7 +28,7 @@ const CertificateSlider: React.FC<CertificateSliderProps> = ({ certificates }) =
   };
   
   if (!certificates.length) {
-    return <div>No certificates available</div>;
+    return <div>${t('certificates.noCertificates')}</div>;
   }
   
   const currentCertificate = certificates[currentIndex];
@@ -62,8 +62,8 @@ const CertificateSlider: React.FC<CertificateSliderProps> = ({ certificates }) =
               </p>
             </div>
             
-            <p className="text-gray-700 dark:text-gray-300 mb-6 flex-grow">
-              {currentCertificate.description}
+            <p className="text-justify text-gray-700 dark:text-gray-300 mb-6 flex-grow">
+              {currentCertificate.description[language]}
             </p>
             
             {currentCertificate.verificationUrl && (
@@ -73,7 +73,7 @@ const CertificateSlider: React.FC<CertificateSliderProps> = ({ certificates }) =
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
               >
-                Verify Certificate
+                ${t('certificates.verifyCertificate')}
                 <ExternalLink className="w-4 h-4 ml-1" />
               </a>
             )}
