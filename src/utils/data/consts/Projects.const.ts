@@ -60,15 +60,24 @@ export const PROJECTS: IFProject[] = [
   },
   {
     id: 'ONP25',
-    title: 'ORION New Price',
+    title: 'ONP25',
     companyName: 'FPT Software',
     methodology: 'Scrum/Agile',
+    role: '.Net Developer',
+    thumbnail: '/assets/images/D365-Logo.png',
+    categories: ['web', 'd365', 'crm'],
+    technologies: ['Microsoft D365 F&O', 'X++', 'SQL', '.Net Framework'],
+    projectTypes: ['Web Development', 'CRM', 'D365 F&O', 'Unit Test', 'SIT', 'Flowchart Design'],
+    teamsize: 5,
+    featured: true,
+    fromDate: 'Jan/2025',
+    toDate: 'May/2025',
     shortDescription: {
       en: [
-        "A module to oversee \"Picing\" across SONY's ecosystem, encompassing both its domestic and international member companies.",
+        "This is a module for managing \"Prices\" across the entire ecosystem of a major player in Japan, encompassing both its domestic and international member companies.",
       ],
       vi: [
-        "Đây là 1 module giám sát \"Giá\" trên toàn hệ sinh thái SONY, bao gồm cả các công ty thành viên trong nước và quốc tế."
+        "Đây là 1 module để quản lý \"Giá\" cho toàn bộ hệ sinh thái của một \"Ông lớn\" tại Nhật bản, bao gồm cả các công ty thành viên trong nước và quốc tế."
       ]
     },
     fullDescription: {
@@ -81,18 +90,11 @@ export const PROJECTS: IFProject[] = [
         "Sử dụng X++ (.Net Framework) để xây dựng chức năng upload excel, cho phép insert vào cơ sở dữ liệu lên đến 10,000 records cùng một lúc."
       ]
     },
-    thumbnail: '/assets/images/D365-Logo.png',
     images: [
       '/assets/images/D365-Logo.png',
       '/assets/images/d365-slider-1.jpg',
       '/assets/images/d365-slider-2.jpg',
     ],
-    categories: ['web', 'd365', 'crm'],
-    technologies: ['Microsoft D365 F&O', 'X++', 'SQL', '.Net Framework'],
-    teamsize: 5,
-    featured: true,
-    fromDate: 'Jan/2025',
-    toDate: 'May/2025',
     responsibility: {
       en: [
         "Worked as an official Low-code Developer at the company",
@@ -111,7 +113,6 @@ export const PROJECTS: IFProject[] = [
         "Lập trình, sửa lỗi, giải quyết vấn đề."
       ]
     },
-    role: '.Net Developer',
     achievements: {
       en: [
         "Ensure monthly release schedule with customers.",
@@ -128,7 +129,6 @@ export const PROJECTS: IFProject[] = [
         "Được nhiều kênh thông tin đại chúng của công ty ca ngợi và đưa tin.",
       ]
     },
-    projectTypes: ['Web Development', 'CRM', 'D365 F&O', 'Unit Test', 'SIT', 'Flowchart Design'],
     articles: [{
       title: {
         en: ['FPT SOFTWARE CAN THO IMPRESSES CUSTOMERS WITH DYNAMICS 365 SOLUTION'],
@@ -148,10 +148,10 @@ export const PROJECTS: IFProject[] = [
     methodology: 'Waterfall',
     shortDescription: {
       en: [
-        "This module handles ANA Airlines' Booking functionality. Allowing users to check, register, and pay for in-flight services post-ticket booking.",
+        "This project is a module of the \"Booking\" function for the largest airline in Japan. It allows verification and payment of registered services."
       ],
       vi: [
-        "Module này xử lý chức năng \"Đặt Vé\" của ANA airline. Nó cho phép người dùng kiểm tra, đăng ký và thanh toán các dịch vụ trên chuyến bay đó sau khi đặt vé."
+        "Dự án này là một module của chức năng \"Đặt chỗ\" cho hãng hàng không lớn nhất Nhật Bản. Nó cho phép xác minh và thanh toán các dịch vụ đã đăng ký."
       ]
     },
     featured: false,
@@ -207,26 +207,24 @@ export const PROJECTS: IFProject[] = [
     methodology: 'Scrum/Agile',
     shortDescription: {
       en: [
-        "It serves as an intermediary, linking the main system with third-party platforms. It transforms data, unifying disparate systems into a single, cohesive flow."
+        "This project is building a microservices system to automate the entire import and export process for a large oil and gas company in Malaysia."
       ],
       vi: [
-        "Nó đóng vai trò là trung gian, liên kết hệ thống chính với các bên thứ ba. Chuyển đổi dữ liệu, hợp nhất các hệ thống riêng biệt thành một luồng thống nhất."
+        "Dự án này xây dựng một hệ thống microservices để tự động hóa toàn bộ quy trình nhập khẩu và xuất khẩu cho một công ty dầu khí lớn tại Malaysia."
       ]
     },
     featured: true,
     role: 'Low-code Developer',
     fullDescription: {
       en: [
-        "Batch Job Handling.",
-        "Order processing with automation.",
-        "Data Transforming.",
-        "Collaborating with other third-party to integrate systems."
+        "Error Handling, Batch Job Handling, Order processing with automation.",
+        "It serves as an intermediary, linking the main system with third-party platforms.",
+        "It transforms data, unifying disparate systems into a single, cohesive flow."
       ],
       vi: [
-        "Xử lý Batch Job.",
-        "Xử lý đơn hàng tự động.",
-        "Chuyển đổi dữ liệu.",
-        "Hợp tác với các bên thứ ba khác để tích hợp hệ thống."
+        "Xử lý lỗi, xử lý Batch Job, xử lý đơn hàng tự động hóa.",
+        "Nó đóng vai trò là trung gian, liên kết hệ thống chính với các bên thứ ba.",
+        "Chuyển đổi dữ liệu, hợp nhất các hệ thống riêng biệt thành một luồng thống nhất."
       ]
     },
     images: [
