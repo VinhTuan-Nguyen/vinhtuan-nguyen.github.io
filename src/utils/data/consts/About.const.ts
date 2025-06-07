@@ -63,7 +63,7 @@ export const ABOUT = (): IFAbout => {
           ],
           vi: [
             "◦ Được nhận học bổng trong hơn hai liền (2019-2021)",
-            "◦ Đảm nhiện vai trò chủ nhiệm đề tài nghiên cứu khoa học về học máy cấp trường mang tên: \"Xây dựng ứng dụng điểm danh sinh viên bằng khuôn mặt\""            
+            "◦ Đảm nhiện vai trò chủ nhiệm đề tài nghiên cứu khoa học về học máy cấp trường mang tên: \"Xây dựng ứng dụng điểm danh sinh viên bằng khuôn mặt\""
           ]
         }
       }

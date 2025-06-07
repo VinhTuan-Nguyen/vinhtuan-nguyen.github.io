@@ -11,17 +11,17 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
       {skills.map((skillCategory, index) => (
-        <div 
+        <div
           key={index}
           className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
             {skillCategory.category[language]}
           </h3>
-          
+
           <ul className="space-y-2">
             {skillCategory.items.map((skill, skillIndex) => (
-              <li 
+              <li
                 key={skillIndex}
                 className="flex items-center text-gray-700 dark:text-gray-300"
               >

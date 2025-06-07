@@ -44,7 +44,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
     if (replace) {
       for (const key in replace) {
-        translation = key ? translation.replace(key,replace[key]) : translation;
+        translation = key ? translation.replace(key, replace[key]) : translation;
       }
     }
 

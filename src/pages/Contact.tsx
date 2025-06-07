@@ -6,7 +6,7 @@ import ContactForm from '../components/ContactForm';
 
 const Contact: React.FC = () => {
   const { t, language } = useLanguage();
-  
+
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container mx-auto px-4 md:px-6">
@@ -19,20 +19,20 @@ const Contact: React.FC = () => {
             {t('contact.subtitle')}
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <ContactForm />
           </div>
-          
+
           {/* Contact Information */}
           <div>
             <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 {t('contact.direct')}
               </h3>
-              
+
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start">
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
                       {t('contact.form.email')}
                     </h4>
-                    <a 
+                    <a
                       href={`mailto:${CONTACTS().email}`}
                       className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     >
@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 {/* Location */}
                 <div className="flex items-start">
                   <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4">
@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Phone */}
                 <div className="flex items-start">
                   <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4">
@@ -82,26 +82,26 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Social Links */}
               <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                 <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4">
                   {t('social.link.title')}
                 </h4>
-                
+
                 <div className="flex space-x-4">
-                  <a 
+                  <a
                     href={CONTACTS().github}
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
                     aria-label="GitHub"
                   >
                     <GitHub className="h-5 w-5" />
                   </a>
-                  <a 
+                  <a
                     href={CONTACTS().linkedin}
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-600 dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors duration-300"
                     aria-label="LinkedIn"

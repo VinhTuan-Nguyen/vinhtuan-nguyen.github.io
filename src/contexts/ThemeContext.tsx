@@ -15,18 +15,18 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   // Check for user preference or saved theme
   const getInitialTheme = (): Theme => {
     if (typeof window === 'undefined') return 'light';
-    
+
     const savedTheme = localStorage.getItem('theme') as Theme | null;
-    
+
     if (savedTheme && ['light', 'dark'].includes(savedTheme)) {
       return savedTheme as Theme;
     }
-    
+
     // Check for system preference
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark';
     }
-    
+
     return 'light';
   };
 

@@ -5,7 +5,7 @@ import CertificateSlider from '../components/CertificateSlider';
 
 const Certificates: React.FC = () => {
   const { t } = useLanguage();
-  
+
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container mx-auto px-4 md:px-6">
@@ -18,7 +18,7 @@ const Certificates: React.FC = () => {
             {t('certificates.intro')}
           </p>
         </div>
-        
+
         {/* Certificate Slider */}
         <CertificateSlider certificates={CERTIFICATES} />
       </div>

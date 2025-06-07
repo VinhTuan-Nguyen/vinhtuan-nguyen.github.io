@@ -19,12 +19,12 @@ const Navbar: React.FC = () => {
   const toggleLanguage = () => {
     changeLanguage(language === 'en' ? 'vi' : 'en');
   };
-  
+
   // Close menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
-  
+
   // Add scroll event listener
   useEffect(() => {
     const handleScroll = () => {
@@ -42,16 +42,15 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <header 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white dark:bg-gray-900 shadow-md py-3' 
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled
+          ? 'bg-white dark:bg-gray-900 shadow-md py-3'
           : 'bg-transparent py-5'
-      }`}
+        }`}
     >
       <nav className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         {/* Logo/Name */}
-        <Link 
+        <Link
           to="/"
           className="text-xl md:text-2xl font-bold transition-colors duration-300 text-gray-900 dark:text-white"
         >
@@ -64,11 +63,10 @@ const Navbar: React.FC = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`font-medium transition-colors duration-300 ${
-                location.pathname === link.to 
-                  ? 'text-blue-600 dark:text-blue-400' 
+              className={`font-medium transition-colors duration-300 ${location.pathname === link.to
+                  ? 'text-blue-600 dark:text-blue-400'
                   : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-              }`}
+                }`}
             >
               {link.label}
             </Link>
@@ -143,20 +141,18 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`fixed inset-0 bg-white dark:bg-gray-900 z-40 pt-20 transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? 'transform translate-x-0' : 'transform translate-x-full'
-        } md:hidden`}
+        className={`fixed inset-0 bg-white dark:bg-gray-900 z-40 pt-20 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'transform translate-x-0' : 'transform translate-x-full'
+          } md:hidden`}
       >
         <div className="container mx-auto px-6 py-4 flex flex-col space-y-8">
           {PAGE_LINKS().map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`text-xl font-medium transition-colors duration-300 ${
-                location.pathname === link.to 
-                  ? 'text-blue-600 dark:text-blue-400' 
+              className={`text-xl font-medium transition-colors duration-300 ${location.pathname === link.to
+                  ? 'text-blue-600 dark:text-blue-400'
                   : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-              }`}
+                }`}
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}

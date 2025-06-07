@@ -18,7 +18,7 @@ const About: React.FC = () => {
             {t('about.title')}
           </h1>
         </div>
-        
+
         {/* About Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {/* Profile Image */}
@@ -26,13 +26,13 @@ const About: React.FC = () => {
             <div className="sticky top-24">
               <div className="relative mx-auto max-w-sm">
                 <div className="rounded-lg overflow-hidden shadow-lg border-4 border-white dark:border-gray-800">
-                  <img 
+                  <img
                     src="assets/images/profile.jpg"
                     alt="Profile"
                     className="w-full h-auto"
                   />
                 </div>
-                
+
                 <div className="mt-6 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                     {CONTACTS().name[language]}
@@ -43,24 +43,24 @@ const About: React.FC = () => {
                   <div className="space-y-2">
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
                       <span className="font-medium">
-                        {t('contact.form.location')+' '}
-                      </span> 
+                        {t('contact.form.location') + ' '}
+                      </span>
                       {CONTACTS().location[language]}
                     </p>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
                       <span className="font-medium">
-                        {t('contact.form.phone')+' '}
+                        {t('contact.form.phone') + ' '}
                       </span>
                       {CONTACTS().phone[language]}
                     </p>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
                       <span className="font-medium">
-                        {t('contact.form.email')+' '}
+                        {t('contact.form.email') + ' '}
                       </span>
                       {CONTACTS().email}
                     </p>
                   </div>
-                  
+
                   <div className="mt-6">
                     <ResumeButton className="w-full" />
                   </div>
@@ -68,7 +68,7 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Main Content */}
           <div className="md:col-span-1 lg:col-span-2">
             {/* My Story */}
@@ -76,23 +76,23 @@ const About: React.FC = () => {
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 {t('about.story.title')}
               </h2>
-              
+
               <div className="prose prose-lg dark:prose-invert max-w-none">
                 {ABOUT().myStory[language]?.map(item => (
                   <p>{item}</p>
                 ))}
               </div>
             </section>
-            
+
             {/* Skills */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 {t('about.skills.title')}
               </h2>
-              
+
               <SkillsSection skills={SKILLS} />
             </section>
-            
+
             {/* Work Experience */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
@@ -122,13 +122,13 @@ const About: React.FC = () => {
                 </div>
               ))}
             </section>
-            
+
             {/* Education */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 {t('about.education.title')}
               </h2>
-              
+
               {ABOUT().education.map(item => (
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
@@ -151,7 +151,7 @@ const About: React.FC = () => {
                 </div>
               ))}
             </section>
-            
+
             {/* CTA */}
             <div className="bg-blue-50 dark:bg-blue-900/30 p-8 rounded-lg border border-blue-100 dark:border-blue-800">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
@@ -160,7 +160,7 @@ const About: React.FC = () => {
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 {t('about.workTogether')}
               </p>
-              <Link 
+              <Link
                 to="/contact"
                 className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition duration-300 transform hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 dark:bg-blue-500 dark:hover:bg-blue-600"
               >

@@ -31,14 +31,14 @@ export const SKILLS: IFSkill[] = [
     items: ['MSSQL', 'MongoDB', 'PostgreSQL', 'MySql']
   },
   {
-    category:{
+    category: {
       en: ['Design & UX'],
       vi: ['Công cụ thiết kế'],
     },
     items: ['Figma', 'Adobe XD', 'Responsive Design', 'UI/UX Principles', 'Wireframing']
   },
   {
-    category:{
+    category: {
       en: ['Soft Skills'],
       vi: ['Kỹ năng mềm'],
     },

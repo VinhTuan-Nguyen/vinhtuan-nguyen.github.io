@@ -8,21 +8,21 @@ interface ResumeButtonProps {
   icon?: boolean;
 }
 
-const ResumeButton: React.FC<ResumeButtonProps> = ({ 
-  className = '', 
+const ResumeButton: React.FC<ResumeButtonProps> = ({
+  className = '',
   variant = 'primary',
   icon = true
 }) => {
   const { t } = useLanguage();
-  
+
   // This would be the path to your actual resume file
   const resumePath = '/resumes/tuannv_resume.pdf';
-  
+
   const baseStyles = "font-medium rounded-md transition-all duration-300 inline-flex items-center justify-center";
   const sizeStyles = "px-4 py-2 text-sm";
-  
+
   let variantStyles = '';
-  
+
   switch (variant) {
     case 'primary':
       variantStyles = "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600";
@@ -34,12 +34,12 @@ const ResumeButton: React.FC<ResumeButtonProps> = ({
       variantStyles = "border border-gray-300 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800";
       break;
   }
-  
+
   const downloadResume = () => {
     // In a real implementation, this would trigger a download of the actual file
     window.open(resumePath, '_blank');
   };
-  
+
   return (
     <button
       onClick={downloadResume}

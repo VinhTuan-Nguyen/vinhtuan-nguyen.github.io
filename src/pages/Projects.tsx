@@ -8,12 +8,12 @@ import { CATEGORIES } from '../utils/data/consts/Categories.const';
 const Projects: React.FC = () => {
   const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<CategoryAll>('all');
-  
-  const filteredProjects = activeCategory === 'all' 
-    ? PROJECTS 
+
+  const filteredProjects = activeCategory === 'all'
+    ? PROJECTS
     : PROJECTS.filter(p => p.categories.includes(activeCategory));
 
-  
+
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container mx-auto px-4 md:px-6">
@@ -26,31 +26,30 @@ const Projects: React.FC = () => {
             {t('project.subtitle')}
           </p>
         </div>
-        
+
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center mb-12 gap-2">
           {CATEGORIES().map(category => (
             <button
               key={category.value}
               onClick={() => setActiveCategory(category.value)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
-                activeCategory === category.value 
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${activeCategory === category.value
                   ? 'bg-blue-600 text-white dark:bg-blue-500'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
-              }`}
+                }`}
             >
               {category.label}
             </button>
           ))}
         </div>
-        
+
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-        
+
         {/* No Projects Message */}
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
