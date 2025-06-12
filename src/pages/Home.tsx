@@ -16,7 +16,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     // Update the title when the component mounts
     window.scrollTo(0, 0);
-    document.title = t('pages.title', { '{0}': t('pages.home') });
+    document.title = t('pages.title', { '{0}': t('nav.logo') });
   }, [t]);
 
   return (
