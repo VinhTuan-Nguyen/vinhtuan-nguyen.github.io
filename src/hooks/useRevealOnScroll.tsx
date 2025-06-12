@@ -4,7 +4,7 @@ import { RefObject, useEffect, useState } from 'react';
 // It uses Intersection Observer API to detect visibility changes
 export function useRevealOnScroll<T extends HTMLElement>(
     ref: RefObject<T>,
-    threshold = 0.2
+    threshold = 0.1
 ): boolean {
     const [visible, setVisible] = useState(false);
 

@@ -1,9 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { IFProject } from '../utils/interfaces/IFProject';
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 import { ConvertDate } from '../utils/helper/ConvertDate';
+import { IFProject } from '../utils/interfaces/IFProject';
 
 interface ProjectCardProps {
   project: IFProject;
@@ -12,8 +13,19 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { t, language } = useLanguage();
 
+  const projectRef = useRef<HTMLDivElement>(null);
+
+  const projectVisible = useRevealOnScroll(projectRef);
+
+
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div
+      ref={projectRef}
+      className={`bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transform transition-all duration-1000 ease-in-out
+        ${projectVisible
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-24'}
+      `}>
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden">
         <img

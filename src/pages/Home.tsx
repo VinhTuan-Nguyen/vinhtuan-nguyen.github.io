@@ -17,15 +17,13 @@ const Home: React.FC = () => {
   // These refs will be used to observe the visibility of each section
   const avatarRef = useRef<HTMLDivElement>(null);
   const textContentRef = useRef<HTMLDivElement>(null);
-  const featuredSectionRef = useRef<HTMLElement>(null);
   const ctaSectionRef = useRef<HTMLElement>(null);
 
   // State to track visibility of sections
   // These states will be updated based on the intersection observer
-  const avatarVisible = useRevealOnScroll(avatarRef, 0.2);
-  const textVisible = useRevealOnScroll(textContentRef, 0.2);
-  const featuredVisible = useRevealOnScroll(featuredSectionRef, 0.2);
-  const ctaVisible = useRevealOnScroll(ctaSectionRef, 0.2);
+  const avatarVisible = useRevealOnScroll(avatarRef);
+  const textVisible = useRevealOnScroll(textContentRef);
+  const ctaVisible = useRevealOnScroll(ctaSectionRef);
 
   useEffect(() => {
     // Scroll to top and set document title on mount
@@ -67,8 +65,8 @@ const Home: React.FC = () => {
               ref={textContentRef}
               className={`md:w-1/2 mt-10 md:mb-0 md:pr-10 transition-all duration-1000
                 ${textVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-24'}
+                  ? 'opacity-100 translate-x-0 md:translate-y-0'
+                  : 'opacity-0 translate-x-24 md:translate-x-0 md:translate-y-24'}
               `}
             >
               <h1 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
@@ -99,14 +97,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Featured Projects Section */}
-      <section
-        ref={featuredSectionRef}
-        className={`py-16 md:py-24 bg-white dark:bg-gray-900 transition-all duration-1000
-          ${featuredVisible
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-24'}
-        `}
-      >
+      <section className="py-16 md:py-24 bg-white dark:bg-gray-900 transition-all duration-1000">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center mb-12">
             <div>
