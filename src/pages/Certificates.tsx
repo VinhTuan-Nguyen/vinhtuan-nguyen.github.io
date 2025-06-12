@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import CertificateSlider from '../components/CertificateSlider';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CERTIFICATES } from '../utils/data/consts/Certificates.const';
-import CertificateSlider from '../components/CertificateSlider';
 
 const Certificates: React.FC = () => {
+
   const { t } = useLanguage();
+
+  useEffect(() => {
+    // Update the title when the component mounts
+    window.scrollTo(0, 0);
+    document.title = t('pages.title', { '{0}': t('pages.certificates') });
+  }, [t]);
 
   return (
     <div className="min-h-screen pt-24 pb-16">

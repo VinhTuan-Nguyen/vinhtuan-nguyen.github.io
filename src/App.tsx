@@ -1,21 +1,16 @@
-import { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './contexts/ThemeContext';
-import { LanguageProvider } from './contexts/LanguageContext';
-import Navbar from './components/Navbar';
+import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import ProjectDetail from './pages/ProjectDetail';
+import Navbar from './components/Navbar';
+import { LanguageProvider } from './contexts/LanguageContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import About from './pages/About';
 import Certificates from './pages/Certificates';
 import Contact from './pages/Contact';
+import Home from './pages/Home';
+import ProjectDetail from './pages/ProjectDetail';
+import Projects from './pages/Projects';
 
 function App() {
-  useEffect(() => {
-    // Update the title when the component mounts
-    document.title = 'Nguyen Vinh Tuan - Portfolio';
-  }, []);
 
   return (
     <ThemeProvider>

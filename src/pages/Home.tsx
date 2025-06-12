@@ -1,16 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { PROJECTS } from '../utils/data/consts/Projects.const';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard';
 import ResumeButton from '../components/ResumeButton';
-import avatar from '/assets/images/avatar.jpg';
+import { useLanguage } from '../contexts/LanguageContext';
 import { CONTACTS } from '../utils/data/consts/Contacts.const';
+import { PROJECTS } from '../utils/data/consts/Projects.const';
+import avatar from '/assets/images/avatar.jpg';
 
 const Home: React.FC = () => {
+
   const { t, language } = useLanguage();
   const featuredProjects = PROJECTS.filter(p => p.featured);
+
+  useEffect(() => {
+    // Update the title when the component mounts
+    window.scrollTo(0, 0);
+    document.title = t('pages.title', { '{0}': t('pages.home') });
+  }, [t]);
 
   return (
     <div className="min-h-screen">
@@ -39,9 +46,9 @@ const Home: React.FC = () => {
                 {CONTACTS().name[language]}
               </h1>
 
-              <h1 className="text-center md:text-left text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <h2 className="text-center md:text-left text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 {t('home.headline')}
-              </h1>
+              </h2>
 
               <p className="text-center md:text-left text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
                 {t('home.intro')}

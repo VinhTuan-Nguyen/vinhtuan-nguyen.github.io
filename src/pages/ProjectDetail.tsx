@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, Github } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { PROJECTS } from '../utils/data/consts/Projects.const';
 import { ConvertDate } from '../utils/helper/ConvertDate';
 
 const ProjectDetail: React.FC = () => {
+
   const { t, language } = useLanguage();
   const { id } = useParams<{ id: string }>();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -15,8 +16,9 @@ const ProjectDetail: React.FC = () => {
 
   // Scroll to top on page load
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
+    // Update the title when the component mounts
+    document.title = t('pages.title', { '{0}': t('pages.projectDetail') });
+  }, [id, t]);
 
   // Image slider controls
   const goToPreviousImage = () => {
@@ -112,7 +114,7 @@ const ProjectDetail: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`w-3 h-3 md:w-4 md:h-4 md:w-5 md:h-5 rounded-full transition-colors duration-300 ${index === currentImageIndex
+                  className={`w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 rounded-full transition-colors duration-300 ${index === currentImageIndex
                     ? 'bg-blue-600 dark:bg-blue-500'
                     : 'bg-gray-300 dark:bg-gray-600'
                     }`}

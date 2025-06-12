@@ -1,11 +1,17 @@
-import React from 'react';
 import { Github as GitHub, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import React, { useEffect } from 'react';
+import ContactForm from '../components/ContactForm';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CONTACTS } from '../utils/data/consts/Contacts.const';
-import ContactForm from '../components/ContactForm';
 
 const Contact: React.FC = () => {
   const { t, language } = useLanguage();
+
+  useEffect(() => {
+    // Update the title when the component mounts
+    window.scrollTo(0, 0);
+    document.title = t('pages.title', { '{0}': t('pages.contact') });
+  }, [t]);
 
   return (
     <div className="min-h-screen pt-24 pb-16">

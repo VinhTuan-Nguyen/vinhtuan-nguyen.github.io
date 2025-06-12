@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
-import { SKILLS } from '../utils/data/consts/Skills.const';
-import SkillsSection from '../components/SkillsSection';
 import ResumeButton from '../components/ResumeButton';
-import { CONTACTS } from '../utils/data/consts/Contacts.const';
+import SkillsSection from '../components/SkillsSection';
+import { useLanguage } from '../contexts/LanguageContext';
 import { ABOUT } from '../utils/data/consts/About.const';
+import { CONTACTS } from '../utils/data/consts/Contacts.const';
+import { SKILLS } from '../utils/data/consts/Skills.const';
 
 const About: React.FC = () => {
+
   const { t, language } = useLanguage();
+
+  useEffect(() => {
+    // Update the title when the component mounts
+    window.scrollTo(0, 0);
+    document.title = t('pages.title', { '{0}': t('pages.about') });
+  }, [t]);
+
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container mx-auto px-4 md:px-6">
