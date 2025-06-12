@@ -7,6 +7,7 @@ export interface IFAbout {
 }
 
 interface Company {
+    id: string;
     companyName: string;
     jobTitle: IFTranslation;
     fromDate: string;

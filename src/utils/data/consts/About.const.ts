@@ -20,6 +20,7 @@ export const ABOUT = (): IFAbout => {
     },
     company: [
       {
+        id: 'fpt-software',
         companyName: 'FPT Software',
         jobTitle: {
           en: ['Full-Stack Developer'],
