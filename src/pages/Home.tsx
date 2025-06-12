@@ -1,20 +1,35 @@
 import { ArrowRight } from 'lucide-react';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard';
 import ResumeButton from '../components/ResumeButton';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 import { CONTACTS } from '../utils/data/consts/Contacts.const';
 import { PROJECTS } from '../utils/data/consts/Projects.const';
 import avatar from '/assets/images/avatar.jpg';
 
 const Home: React.FC = () => {
-
   const { t, language } = useLanguage();
   const featuredProjects = PROJECTS.filter(p => p.featured);
 
+  // Refs for sections to apply reveal effects
+  // These refs will be used to observe the visibility of each section
+  const avatarRef = useRef<HTMLDivElement>(null);
+  const textContentRef = useRef<HTMLDivElement>(null);
+  const featuredSectionRef = useRef<HTMLElement>(null);
+  const ctaSectionRef = useRef<HTMLElement>(null);
+
+  // State to track visibility of sections
+  // These states will be updated based on the intersection observer
+  const avatarVisible = useRevealOnScroll(avatarRef, 0.2);
+  const textVisible = useRevealOnScroll(textContentRef, 0.2);
+  const featuredVisible = useRevealOnScroll(featuredSectionRef, 0.2);
+  const ctaVisible = useRevealOnScroll(ctaSectionRef, 0.2);
+
   useEffect(() => {
-    // Update the title when the component mounts
+    // Scroll to top and set document title on mount
+    // This ensures the user starts at the top of the page and has a clear title
     window.scrollTo(0, 0);
     document.title = t('pages.title', { '{0}': t('nav.logo') });
   }, [t]);
@@ -26,7 +41,14 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row items-center">
             {/* Profile Image */}
-            <div className="md:w-1/2 flex justify-center">
+            <div
+              ref={avatarRef}
+              className={`md:w-1/2 flex justify-center transition-all duration-1000
+                ${avatarVisible
+                  ? 'opacity-100 translate-x-0'
+                  : 'opacity-0 -translate-x-24'}
+              `}
+            >
               <div className="relative">
                 <div className="absolute -top-6 -left-6 w-24 h-24 bg-indigo-600 dark:bg-indigo-500 rounded-full opacity-20 z-0"></div>
                 <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg shadow-blue-500/50 z-10">
@@ -41,7 +63,14 @@ const Home: React.FC = () => {
             </div>
 
             {/* Text Content */}
-            <div className="md:w-1/2 mt-10 md:mb-0 md:pr-10">
+            <div
+              ref={textContentRef}
+              className={`md:w-1/2 mt-10 md:mb-0 md:pr-10 transition-all duration-1000
+                ${textVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-24'}
+              `}
+            >
               <h1 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 {CONTACTS().name[language]}
               </h1>
@@ -70,7 +99,14 @@ const Home: React.FC = () => {
       </section>
 
       {/* Featured Projects Section */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
+      <section
+        ref={featuredSectionRef}
+        className={`py-16 md:py-24 bg-white dark:bg-gray-900 transition-all duration-1000
+          ${featuredVisible
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-24'}
+        `}
+      >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center mb-12">
             <div>
@@ -100,7 +136,14 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 dark:bg-blue-800">
+      <section
+        ref={ctaSectionRef}
+        className={`py-16 bg-blue-600 dark:bg-blue-800 transition-all duration-1000
+          ${ctaVisible
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-24'}
+        `}
+      >
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
             {t('home.cta.interested')}
