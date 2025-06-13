@@ -86,8 +86,8 @@ const About: React.FC = () => {
               </h2>
 
               <div className="prose prose-lg dark:prose-invert max-w-none">
-                {ABOUT().myStory[language]?.map(item => (
-                  <p>{item}</p>
+                {ABOUT().myStory[language]?.map((item, index) => (
+                  <p key={index}>{item}</p>
                 ))}
               </div>
             </section>
@@ -107,8 +107,8 @@ const About: React.FC = () => {
                 {t('about.experience.title')}
               </h2>
 
-              {ABOUT().company.map(item => (
-                <div className="space-y-6">
+              {ABOUT().company.map((item, index) => (
+                <div key={index} className="space-y-6">
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                       <div>
@@ -123,8 +123,8 @@ const About: React.FC = () => {
                         {[item.fromDate, item.toDate].join(' - ')}
                       </p>
                     </div>
-                    {item.description[language]?.map(item => (
-                      <p className="text-gray-700 dark:text-gray-300">{item}</p>
+                    {item.description[language]?.map((subItem, subIndex) => (
+                      <p key={subIndex} className="text-gray-700 dark:text-gray-300">{subItem}</p>
                     ))}
                   </div>
                 </div>
@@ -137,8 +137,8 @@ const About: React.FC = () => {
                 {t('about.education.title')}
               </h2>
 
-              {ABOUT().education.map(item => (
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+              {ABOUT().education.map((item, index) => (
+                <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -153,8 +153,8 @@ const About: React.FC = () => {
                       {[item.fromDate, item.toDate].join(' - ')}
                     </p>
                   </div>
-                  {item.achievements[language]?.map(item => (
-                    <p className="text-gray-700 dark:text-gray-300">{item}</p>
+                  {item.achievements[language]?.map((subItem, subIndex) => (
+                    <p key={subIndex} className="text-gray-700 dark:text-gray-300">{subItem}</p>
                   ))}
                 </div>
               ))}
