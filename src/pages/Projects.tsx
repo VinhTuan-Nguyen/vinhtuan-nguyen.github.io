@@ -4,6 +4,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { CategoryAll } from '../utils/Types';
 import { CATEGORIES } from '../utils/data/consts/Categories.const';
 import { PROJECTS } from '../utils/data/consts/Projects.const';
+import { useStaggeredRevealOnScroll } from '../hooks/useStaggeredRevealOnScroll';
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 
 const Projects: React.FC = () => {
   const { t } = useLanguage();
@@ -13,13 +15,24 @@ const Projects: React.FC = () => {
     ? PROJECTS
     : PROJECTS.filter(p => p.categories.includes(activeCategory));
 
+  const { visible: projectVisible, itemRefs: projectRefs } = useStaggeredRevealOnScroll(filteredProjects.length, 0.1, 200);
+
+  const titleRef = React.useRef<HTMLHeadingElement>(null);
+
+  const titleVisivle = useRevealOnScroll(titleRef, 0.1);
+
   useEffect(() => {
     document.title = t('pages.title', { '{0}': t('pages.projects') });
   }, [t]);
 
   return (
     <div className="min-h-screen pt-24 pb-16">
-      <div className="container mx-auto px-4 md:px-6">
+      <div
+        ref={titleRef}
+          className={`container mx-auto px-4 md:px-6 transition-opacity duration-1000
+            ${titleVisivle ? 'opacity-100' : 'opacity-0'}
+          `}
+      >
         {/* Page Header */}
         <div className="mb-12 text-center max-w-3xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -48,8 +61,18 @@ const Projects: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map(project => (
-            <ProjectCard key={project.id} project={project} />
+          {filteredProjects.map((project, idx) => (
+            <div
+              key={project.id}
+              ref={el => projectRefs.current[idx] = el}
+              className={`transition-all duration-1000
+                ${projectVisible[idx]
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-12'}
+              `}
+            >
+              <ProjectCard key={project.id} project={project} />
+            </div>
           ))}
         </div>
 

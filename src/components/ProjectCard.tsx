@@ -13,7 +13,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { t, language } = useLanguage();
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div className="h-full bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden">
         <img
@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         />
         {project.featured && (
           <div className="absolute top-3 right-3 bg-blue-600 dark:bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-            🔥<strong>{t('project.featured')}</strong>
+            <strong>{t('project.featured')}</strong>
           </div>
         )}
       </div>
@@ -36,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 font-semibold">
           ({[ConvertDate(project.fromDate, language), ConvertDate(project.toDate, language)].join(' - ')})
         </p>
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+        <p className="text-justify text-gray-600 dark:text-gray-300 text-sm mb-4">
           {project.shortDescription[language]}
         </p>
 
