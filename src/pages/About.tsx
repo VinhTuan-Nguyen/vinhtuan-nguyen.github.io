@@ -13,7 +13,6 @@ const About: React.FC = () => {
 
   useEffect(() => {
     // Update the title when the component mounts
-    window.scrollTo(0, 0);
     document.title = t('pages.title', { '{0}': t('pages.about') });
   }, [t]);
 
