@@ -1,9 +1,9 @@
+import { ExternalLink, Github } from 'lucide-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { IFProject } from '../utils/interfaces/IFProject';
 import { ConvertDate } from '../utils/helper/ConvertDate';
+import { IFProject } from '../utils/interfaces/IFProject';
 
 interface ProjectCardProps {
   project: IFProject;

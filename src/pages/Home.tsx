@@ -5,6 +5,7 @@ import ProjectCard from '../components/ProjectCard';
 import ResumeButton from '../components/ResumeButton';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
+import { useStaggeredRevealOnScroll } from '../hooks/useStaggeredRevealOnScroll';
 import { CONTACTS } from '../utils/data/consts/Contacts.const';
 import { PROJECTS } from '../utils/data/consts/Projects.const';
 import avatar from '/assets/images/avatar.jpg';
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
   const textVisible = useRevealOnScroll(textContentRef);
   const featuredVisible = useRevealOnScroll(featuredRef);
   const ctaVisible = useRevealOnScroll(ctaSectionRef);
+  const { visible: projectVisible, itemRefs: projectRefs } = useStaggeredRevealOnScroll(featuredProjects.length, 0.1, 200);
 
   useEffect(() => {
     document.title = t('pages.title', { '{0}': t('nav.logo') });
@@ -123,8 +125,18 @@ const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map(project => (
-              <ProjectCard key={project.id} project={project} />
+            {featuredProjects.map((project, idx) => (
+              <div
+                key={project.id}
+                ref={el => projectRefs.current[idx] = el}
+                className={`transition-all duration-1000
+                  ${projectVisible[idx]
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-24'}
+                `}
+              >
+                <ProjectCard project={project} />
+              </div>
             ))}
           </div>
         </div>
