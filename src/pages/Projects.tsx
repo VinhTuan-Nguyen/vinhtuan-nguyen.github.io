@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
     ? PROJECTS
     : PROJECTS.filter(p => p.categories.includes(activeCategory));
 
-  const { visible: projectVisible, itemRefs: projectRefs } = useStaggeredRevealOnScroll(filteredProjects.length, 0.1, 200);
+  const { visible: projectVisible, itemRefs: projectRefs } = useStaggeredRevealOnScroll(filteredProjects.length, 0.1, 50);
 
   const titleRef = React.useRef<HTMLHeadingElement>(null);
 
