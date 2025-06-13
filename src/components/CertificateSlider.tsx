@@ -58,6 +58,7 @@ const CertificateSlider: React.FC<CertificateSliderProps> = ({ certificates }) =
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
+
       {/* Main Certificate Display */}
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 md:p-8">
         <div className="grid grid-cols-1 gap-8">
@@ -75,6 +76,38 @@ const CertificateSlider: React.FC<CertificateSliderProps> = ({ certificates }) =
               alt={currentCertificate.title}
               className="w-full h-auto max-h-96 object-contain"
             />
+          </div>
+
+          {/* Navigation Dots */}
+          <div className="flex justify-center items-center mb-6 space-x-2">
+            {/* Navigation Arrows */}
+            <button
+              onClick={goToPrevious}
+              className="bg-white dark:bg-gray-800 rounded-full p-1 md:p-2 shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 focus:outline-none"
+              aria-label="Previous certificate"
+            >
+              <ChevronLeft className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+            </button>
+
+            {certificates.map((_, slideIndex) => (
+              <button
+                key={slideIndex}
+                onClick={() => goToSlide(slideIndex)}
+                className={`w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 rounded-full transition-colors duration-300 focus:outline-none ${slideIndex === currentIndex
+                  ? 'bg-blue-600 dark:bg-blue-500'
+                  : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                  }`}
+                aria-label={`Go to certificate ${slideIndex + 1}`}
+              />
+            ))}
+
+            <button
+              onClick={goToNext}
+              className="bg-white dark:bg-gray-800 rounded-full p-1 md:p-2 shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 focus:outline-none"
+              aria-label="Next certificate"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+            </button>
           </div>
 
           {/* Certificate Details */}
@@ -109,38 +142,6 @@ const CertificateSlider: React.FC<CertificateSliderProps> = ({ certificates }) =
             )}
           </div>
         </div>
-      </div>
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={goToPrevious}
-        className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 md:-translate-x-6 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 focus:outline-none"
-        aria-label="Previous certificate"
-      >
-        <ChevronLeft className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-      </button>
-
-      <button
-        onClick={goToNext}
-        className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 md:translate-x-6 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 focus:outline-none"
-        aria-label="Next certificate"
-      >
-        <ChevronRight className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-      </button>
-
-      {/* Navigation Dots */}
-      <div className="flex justify-center mt-6 space-x-2">
-        {certificates.map((_, slideIndex) => (
-          <button
-            key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}
-            className={`w-3 h-3 rounded-full transition-colors duration-300 focus:outline-none ${slideIndex === currentIndex
-              ? 'bg-blue-600 dark:bg-blue-500'
-              : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
-              }`}
-            aria-label={`Go to certificate ${slideIndex + 1}`}
-          />
-        ))}
       </div>
     </div>
   );
