@@ -64,7 +64,7 @@ export const PROJECTS: IFProject[] = [
     companyName: 'FPT Software',
     methodology: 'Scrum/Agile',
     role: '.Net Developer',
-    thumbnail: '/assets/images/D365-Logo.png',
+    thumbnail: '/assets/images/D365-Logo.jpg',
     categories: ['web', 'd365', 'crm'],
     technologies: ['Microsoft D365 F&O', 'X++', 'SQL', '.Net Framework'],
     projectTypes: ['Web Development', 'CRM', 'D365 F&O', 'Unit Test', 'SIT', 'Flowchart Design'],
@@ -91,7 +91,7 @@ export const PROJECTS: IFProject[] = [
       ]
     },
     images: [
-      '/assets/images/D365-Logo.png',
+      '/assets/images/D365-Logo.jpg',
       '/assets/images/d365-slider-1.jpg',
       '/assets/images/d365-slider-2.jpg',
     ],
@@ -199,7 +199,7 @@ export const PROJECTS: IFProject[] = [
   {
     id: 'PETMULESOFT',
     title: 'PET - Mulesoft',
-    thumbnail: '/assets/images/petronas-logo.png',
+    thumbnail: '/assets/images/petronas-logo.jpg',
     companyName: 'FPT Software',
     fromDate: 'Sep/2022',
     toDate: 'Apr/2024',
@@ -228,9 +228,9 @@ export const PROJECTS: IFProject[] = [
       ]
     },
     images: [
-      '/assets/images/petronas-logo.png',
-      '/assets/images/mulesoft-logo.png',
-      '/assets/images/mulesoft-api-led.png',
+      '/assets/images/petronas-logo.jpg',
+      '/assets/images/mulesoft-logo.jpg',
+      '/assets/images/mulesoft-api-led.jpg',
     ],
     categories: ['api', 'microservices'],
     technologies: ['Mulesoft', 'Anypoint Platform', 'Munit Test', 'Maven/Java', 'Anypoint MQ'],
@@ -267,7 +267,7 @@ export const PROJECTS: IFProject[] = [
   {
     id: 'CRV_EVOUCHER',
     title: 'CRV - eVoucher',
-    thumbnail: '/assets/images/mulesoft-logo.png',
+    thumbnail: '/assets/images/mulesoft-logo.jpg',
     companyName: 'FPT Software',
     fromDate: 'Jun/2022',
     toDate: 'Sep/2022',
@@ -294,8 +294,8 @@ export const PROJECTS: IFProject[] = [
       ]
     },
     images: [
-      '/assets/images/mulesoft-logo.png',
-      '/assets/images/mulesoft-api-led.png',
+      '/assets/images/mulesoft-logo.jpg',
+      '/assets/images/mulesoft-api-led.jpg',
     ],
     categories: ['api'],
     technologies: ['Mulesoft', 'Anypoint Platform', 'Munit Test', 'Maven/Java'],
